@@ -121,8 +121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2a2e23da40686b44b868640ad9a036b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wobbleAmplitude: 0.02
-  wobbleFrequency: 0.5
+  enjoymentValue: 50
+  behaviorState: 0
+  audienceTags: []
 --- !u!1 &6491062370540412761
 GameObject:
   m_ObjectHideFlags: 0

@@ -102,17 +102,14 @@ public class GameManager : MonoBehaviour
             }
             Debug.Log(joke.text);
 
-            // Update persons behavior
+        }
 
-            foreach (var item in enjoymentValues.Keys)
-            {
-                // TODO:  notify person about enjoyment value change so it can display an emoji
-                item.enjoymentValue += enjoymentValues[item];
-                Debug.Log($"{item.audienceTags[0]}, {item.audienceTags[1]}: {enjoymentValues[item]}");
-            }
-
-            // Update Score
-            Invoke("PersonLeave",Random.Range(0, 1f));
+        foreach (var item in enjoymentValues.Keys)
+        {
+            // TODO:  notify person about enjoyment value change so it can display an emoji
+            item.enjoymentValue += enjoymentValues[item];
+            item.SetBehavior();
+            Debug.Log($"{item.audienceTags[0]}, {item.audienceTags[1]}: {enjoymentValues[item]}");
         }
 
     }

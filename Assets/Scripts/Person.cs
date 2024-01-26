@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 public class Person : MonoBehaviour
 {
@@ -22,7 +21,7 @@ public class Person : MonoBehaviour
 
     private MeshRenderer meshRenderer;
 
-    public float enjoymentValue;
+    public float enjoymentValue = 50;
 
     private Transform leavingPoint;
 
@@ -44,9 +43,9 @@ public class Person : MonoBehaviour
         startPosition = transform.position;
         targetPosition = transform.position;
         currentPosition = transform.position;
-        randomXOffset = Random.Range(0,0.5f);
+        randomXOffset = UnityEngine.Random.Range(0,0.5f);
 
-        currentWobblePhase = new Vector3(Random.value, Random.value, Random.value);
+        currentWobblePhase = new Vector3(UnityEngine.Random.value, UnityEngine.Random.value, UnityEngine.Random.value);
 
         leavingPoint = GameObject.Find("LeavingPosition").transform;
         meshRenderer = GetComponent<MeshRenderer>();
@@ -61,6 +60,16 @@ public class Person : MonoBehaviour
         float enj = 1f - (Math.Clamp(this.enjoymentValue, 1, 100) / 100f);
         var col = new Color(1f, enj, 1f);
         meshRenderer.material.SetColor("_Color", col);
+    }
+
+
+    public void SetBehavior()
+    {
+        if(enjoymentValue >= 70) behaviorState = BehaviorState.Happy;
+        else if (enjoymentValue >= 40) behaviorState = BehaviorState.Neutral;
+        else if (enjoymentValue >= 20) behaviorState = BehaviorState.Booing;
+        else if (enjoymentValue >= 0.1) behaviorState = BehaviorState.Angry;
+        else behaviorState = BehaviorState.Leaving;
     }
 
 
