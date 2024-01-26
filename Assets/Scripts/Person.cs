@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,7 @@ public class Person : MonoBehaviour
     private Vector3 currentWobbleAmplitude;
     private Vector3 currentWobblePhase;
 
+    private MeshRenderer meshRenderer;
 
     public float enjoymentValue;
 
@@ -35,6 +37,8 @@ public class Person : MonoBehaviour
 
     public BehaviorState behaviorState = BehaviorState.Neutral;
 
+    public string[] audienceTags;
+
     void Start()
     {
         startPosition = transform.position;
@@ -45,6 +49,7 @@ public class Person : MonoBehaviour
         currentWobblePhase = new Vector3(Random.value, Random.value, Random.value);
 
         leavingPoint = GameObject.Find("LeavingPosition").transform;
+        meshRenderer = GetComponent<MeshRenderer>();
     }
 
 
@@ -52,6 +57,10 @@ public class Person : MonoBehaviour
     {
         UpdateBehavior();
         UpdateMovement();
+
+        float enj = 1f - (Math.Clamp(this.enjoymentValue, 1, 100) / 100f);
+        var col = new Color(1f, enj, 1f);
+        meshRenderer.material.SetColor("_Color", col);
     }
 
 
