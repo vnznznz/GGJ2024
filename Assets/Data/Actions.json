@@ -1,0 +1,70 @@
+{
+    "actions": [
+        {
+            "title": "Blonde",
+            "text": "Tell a joke about a blonde women failing to parallel park her car",
+            "result": [
+                {
+                    "audience": "male",
+                    "value": 30
+                },
+                {
+                    "audience": "boomer",
+                    "value": 20
+                },
+                {
+                    "audience": "female",
+                    "value": -15
+                },
+                {
+                    "audience": "millenial",
+                    "value": 5
+                },
+                {
+                    "audience": "genz",
+                    "value": -30
+                }
+            ]
+        },
+        {
+            "title": "Politics",
+            "text": "Re-tell the latest debate about cannabis legalization, exaggerating the role of the aging justice minister.",
+            "result": [
+                {
+                    "audience": "boomer",
+                    "value": -5
+                },
+                {
+                    "audience": "millenial",
+                    "value": 10
+                },
+                {
+                    "audience": "genz",
+                    "value": 30
+                }
+            ]
+        },
+        {
+            "title": "Language",
+            "text": "Make a pun by mispronouncing the name of a chinese politication",
+            "result": [
+                {
+                    "audience": "male",
+                    "value": 5
+                },
+                {
+                    "audience": "boomer",
+                    "value": 20
+                },
+                {
+                    "audience": "millenial",
+                    "value": -5
+                },
+                {
+                    "audience": "genz",
+                    "value": -15
+                }
+            ]
+        }
+    ]
+}
