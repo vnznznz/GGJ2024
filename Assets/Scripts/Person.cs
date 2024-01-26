@@ -29,6 +29,8 @@ public class Person : MonoBehaviour
 
     public BehaviorState behaviorState = BehaviorState.Neutral;
 
+    public string[] audienceTags;
+
     void Start()
     {
         startPosition = transform.position + new Vector3(0, 1.5f, 0);
