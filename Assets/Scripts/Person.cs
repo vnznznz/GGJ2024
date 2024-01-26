@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,7 @@ public class Person : MonoBehaviour
     private Vector3 currentWobbleAmplitude;
     private Vector3 currentWobblePhase;
 
+    private MeshRenderer meshRenderer;
 
     public float enjoymentValue;
 
@@ -34,7 +36,10 @@ public class Person : MonoBehaviour
     void Start()
     {
         startPosition = transform.position + new Vector3(0, 1.5f, 0);
-        currentWobblePhase = new Vector3(Random.value, Random.value, Random.value);
+        currentWobblePhase = new Vector3(UnityEngine.Random.value, UnityEngine.Random.value, UnityEngine.Random.value);
+
+        meshRenderer = GetComponent<MeshRenderer>();
+
     }
 
 
@@ -42,6 +47,10 @@ public class Person : MonoBehaviour
     {
         UpdateBehavior();
         UpdateMovement();
+
+        float enj = 1f - (Math.Clamp(this.enjoymentValue, 1, 100) / 100f);
+        var col = new Color(1f, enj, 1f);
+        meshRenderer.material.SetColor("_Color", col);
     }
 
 
@@ -70,7 +79,7 @@ public class Person : MonoBehaviour
 
     private void UpdateMovement()
     {
-        currentWobbleAmplitude = Vector3.Lerp(currentWobbleAmplitude,targetWobbleAmplitude,Time.deltaTime * 0.1f);
+        currentWobbleAmplitude = Vector3.Lerp(currentWobbleAmplitude, targetWobbleAmplitude, Time.deltaTime * 0.1f);
         currentWobbleFrequency = Vector3.Lerp(currentWobbleFrequency, targetWobbleFrequency, Time.deltaTime * 0.1f);
 
 
@@ -86,8 +95,8 @@ public class Person : MonoBehaviour
 
     private void UpdateNeutral()
     {
-        targetWobbleAmplitude = new Vector3(0.01f,0.05f,0.01f);
-        targetWobbleFrequency = new Vector3(0.5f,0.5f,0.5f);
+        targetWobbleAmplitude = new Vector3(0.01f, 0.05f, 0.01f);
+        targetWobbleFrequency = new Vector3(0.5f, 0.5f, 0.5f);
     }
     private void UpdateHappy()
     {
