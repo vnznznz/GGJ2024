@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
 
     private List<Person> audience = new List<Person>();
 
+    int index = 0;
+
 
     public static GameManager Instance
     {
@@ -44,6 +46,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         PopulateAudience();
+        Invoke("TellAJoke",3);
     }
 
 
@@ -74,7 +77,14 @@ public class GameManager : MonoBehaviour
             // Update persons behavior
 
             // Update Score
+            Invoke("PersonLeave",Random.Range(0, 1f));
         }
 
+    }
+
+    void PersonLeave()
+    {
+        audience[index].behaviorState = Person.BehaviorState.Leaving;
+        index++;
     }
 }
