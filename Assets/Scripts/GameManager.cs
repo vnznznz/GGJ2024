@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     private ComedyAction[] currentCards;
 
-    public Dictionary<string,Dictionary<string,Dictionary<string,Dictionary<int,EventReference>>>> laughingSounds;
+    public Dictionary<string, Dictionary<string, Dictionary<string, Dictionary<int, EventReference>>>> laughingSounds;
 
 
     public enum GameState
@@ -98,6 +98,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void MissJoke()
+    {
+        foreach (Person person in audience)
+        {
+            person.ForceEnjoymentUponThee(-5);
+        }
+    }
+
     public void TellAJoke(ComedyAction joke)
     {
         // calculate each persons enjoyment
@@ -128,8 +136,7 @@ public class GameManager : MonoBehaviour
         foreach (var item in enjoymentValues.Keys)
         {
             // TODO:  notify person about enjoyment value change so it can display an emoji
-            item.enjoymentValue += enjoymentValues[item];
-            item.SetBehavior();
+            item.ForceEnjoymentUponThee(enjoymentValues[item]);
             Debug.Log($"{item.audienceTags[0]}, {item.audienceTags[1]}: {enjoymentValues[item]}");
         }
 
@@ -141,7 +148,7 @@ public class GameManager : MonoBehaviour
         gameState = GameState.Round;
 
         // Generate random set of cards
-       currentCards = comedyActionsLoader.GetRandomComedyActions((uint)numCards);
+        currentCards = comedyActionsLoader.GetRandomComedyActions((uint)numCards);
 
         // update ui
 

@@ -56,10 +56,16 @@ public class Person : MonoBehaviour
 
     public Camera mainCamera;
     public UnityEngine.UI.Image faceImage;
+
+    public UnityEngine.UI.Image reactionImage;
+
     public string[] audienceTags;
 
 
     public NamedImage[] audienceHairImages;
+    public NamedImage[] reactionIconImages;
+
+    private Dictionary<string, Sprite> reactionImages = new Dictionary<string, Sprite>();
     void Start()
     {
         startPosition = transform.position;
@@ -77,6 +83,8 @@ public class Person : MonoBehaviour
         faceImage = transform.Find("Canvas/FaceSprite").GetComponent<UnityEngine.UI.Image>();
         faceImage.sprite = faceNeutral;
 
+        reactionImage = transform.Find("Reaction/ReactionSprite").GetComponent<UnityEngine.UI.Image>();
+
         emitter = GetComponent<FMODUnity.StudioEventEmitter>();
 
         var hairId = $"{gender}_{age}";
@@ -88,6 +96,11 @@ public class Person : MonoBehaviour
                 transform.Find("Canvas/HairSprite").GetComponent<UnityEngine.UI.Image>().sprite = item.image;
                 break;
             }
+        }
+
+        foreach (var item in reactionIconImages)
+        {
+            reactionImages[item.name] = item.image;
         }
     }
 
@@ -115,9 +128,57 @@ public class Person : MonoBehaviour
         enjoymentValue = Math.Clamp(enjoymentValue, -1, 100);
     }
 
-
-    public void SetBehavior()
+    private IEnumerator HideReactionIcon(float seconds)
     {
+        yield return new WaitForSeconds(1);
+
+        float alpha = 1;
+        reactionImage.material.color = new Color(1f, 1f, 1f, 1f);
+        for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / seconds)
+        {
+            Color newColor = new Color(1, 1, 1, Mathf.Lerp(alpha, 0, t));
+            reactionImage.material.color = newColor;
+            yield return null;
+        }
+
+        reactionImage.gameObject.SetActive(false);
+        reactionImage.sprite = null;
+        yield return null;
+    }
+
+    public void ForceEnjoymentUponThee(float enjoymentDelta)
+    {
+        enjoymentValue += enjoymentDelta;
+
+        if (enjoymentDelta >= 10)
+        {
+            // happy icon
+            reactionImage.sprite = reactionImages["happy"];
+        }
+        else if (enjoymentDelta > 5 && enjoymentDelta < 10)
+        {
+            // mild happy icon
+            reactionImage.sprite = reactionImages["mildhappy"];
+        }
+        else if (enjoymentDelta < -5 && enjoymentDelta > -10)
+        {
+            // mild unhappy icon
+            reactionImage.sprite = reactionImages["mildunhappy"];
+        }
+        else if (enjoymentDelta <= -10)
+        {
+            // mild happy icon
+            reactionImage.sprite = reactionImages["unhappy"];
+        }
+        else
+        {
+            reactionImage.sprite = reactionImages["question"];
+        }
+
+        reactionImage.gameObject.SetActive(true);
+
+        StartCoroutine(HideReactionIcon(3));
+
         if (enjoymentValue >= 70) behaviorState = BehaviorState.Happy;
         else if (enjoymentValue >= 40) behaviorState = BehaviorState.Neutral;
         else if (enjoymentValue >= 20) behaviorState = BehaviorState.Booing;
@@ -276,7 +337,7 @@ public class Person : MonoBehaviour
 
     private void PlayBooing()
     {
-        int laughIndex = Mathf.Clamp(Mathf.RoundToInt(UnityEngine.Random.value * 2),0,1);
+        int laughIndex = Mathf.Clamp(Mathf.RoundToInt(UnityEngine.Random.value * 2), 0, 1);
 
         string path = "event:/Audience/Booing" + "/" + audienceTags[0] + "/" + audienceTags[0] + "_" + audienceTags[1] + "_booing_" + (laughIndex + 1).ToString();
         FMODUnity.RuntimeManager.PlayOneShot(path, transform.position);
@@ -294,7 +355,7 @@ public class Person : MonoBehaviour
     {
         int index = Mathf.Clamp(Mathf.RoundToInt(UnityEngine.Random.value * 7), 0, 6);
 
-        string path = "event:/Audience/Leaving/ChairMoving"+(index+1).ToString();
+        string path = "event:/Audience/Leaving/ChairMoving" + (index + 1).ToString();
         FMODUnity.RuntimeManager.PlayOneShot("event:/Audience/Leaving/ChairMoving_" + (index + 1).ToString(), transform.position);
         index = Mathf.Clamp(Mathf.RoundToInt(UnityEngine.Random.value * 4), 0, 3);
         FMODUnity.RuntimeManager.PlayOneShot("event:/Audience/Leaving/Footsteps_" + (index + 1).ToString(), transform.position);

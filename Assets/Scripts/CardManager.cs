@@ -22,9 +22,11 @@ public class CardManager : MonoBehaviour
 
     private Bar timeBar;
 
-    public float selectionTime = 3;
+    public float pauseTime = 3;
+    public float selectionTime = 6;
     private float selectionAccu = 0;
-    private void Start() {
+    private void Start()
+    {
         timeBar = transform.Find("TimebarBar").GetComponent<Bar>();
     }
     private void Update()
@@ -32,15 +34,17 @@ public class CardManager : MonoBehaviour
 
         selectionAccu += Time.deltaTime;
 
-        if (selectionAccu > selectionTime) {
+        if (selectionAccu > selectionTime)
+        {
             selectionAccu = 0;
+            GameManager.Instance.MissJoke();
             ClearCards();
-            // TODO: negative consequence of missing joke
         }
 
         timeBar.currentValue = selectionAccu / selectionTime;
 
-        if (transform.GetComponentsInChildren<Card>().Length == 0) {
+        if (transform.GetComponentsInChildren<Card>().Length == 0)
+        {
             LoadCards();
         }
 
@@ -60,6 +64,7 @@ public class CardManager : MonoBehaviour
     }
     private void LoadCards()
     {
+        selectionAccu = 0;
         float xPos = -xPadding;
         for (int i = 0; i < maxCards; i++)
         {
