@@ -231,7 +231,30 @@ public class Person : MonoBehaviour
     {
         int laughIndex = Mathf.RoundToInt(UnityEngine.Random.value*4);
 
-        Debug.Log(emitter.EventReference);
+        string path = "event:/Audience/Laughing" + "/" + audienceTags[0] + "/" + audienceTags[0] + "_" + audienceTags[1] + "_laugh_" + (laughIndex + 1).ToString();
+        FMODUnity.RuntimeManager.PlayOneShot(path, transform.position);
+    }
+
+    private void PlayHappyLaugh()
+    {
+        int laughIndex = Mathf.RoundToInt(UnityEngine.Random.value * 4);
+
+        string path = "event:/Audience/Laughing" + "/" + audienceTags[0] + "/" + audienceTags[0] + "_" + audienceTags[1] + "_laugh_" + (laughIndex + 1).ToString();
+        FMODUnity.RuntimeManager.PlayOneShot(path, transform.position);
+    }
+
+    private void PlayBooing()
+    {
+        int laughIndex = Mathf.RoundToInt(UnityEngine.Random.value * 4);
+
+        string path = "event:/Audience/Laughing" + "/" + audienceTags[0] + "/" + audienceTags[0] + "_" + audienceTags[1] + "_laugh_" + (laughIndex + 1).ToString();
+        FMODUnity.RuntimeManager.PlayOneShot(path, transform.position);
+    }
+
+    private void PlayAngry()
+    {
+        int laughIndex = Mathf.RoundToInt(UnityEngine.Random.value * 4);
+
         string path = "event:/Audience/Laughing" + "/" + audienceTags[0] + "/" + audienceTags[0] + "_" + audienceTags[1] + "_laugh_" + (laughIndex + 1).ToString();
         FMODUnity.RuntimeManager.PlayOneShot(path, transform.position);
     }
