@@ -1397,9 +1397,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1985190240}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: PrepareNewRound
+      - m_Target: {fileID: 1968673287}
+        m_TargetAssemblyTypeName: MainMenuGUI, Assembly-CSharp
+        m_MethodName: StartRound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7918,6 +7918,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1968673286}
+  - component: {fileID: 1968673287}
   m_Layer: 0
   m_Name: MainMenu
   m_TagString: Untagged
@@ -7946,6 +7947,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1968673287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968673285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6780cc7d51f4204ea8c61dc8653900d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1974323286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8045,8 +8058,6 @@ MonoBehaviour:
   PersonPrefab: {fileID: 3189576182551522109, guid: aa2d8b2cad8bb31448a9c5a05c90a397, type: 3}
   comedyActionsLoader: {fileID: 0}
   cardManager: {fileID: 417861023}
-  menuCamera: {fileID: 443765613}
-  gameCamera: {fileID: 974853473}
   numCards: 3
   gameDuration: 60
   currentGameTime: 0
