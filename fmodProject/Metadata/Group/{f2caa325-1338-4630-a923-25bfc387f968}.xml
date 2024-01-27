@@ -16,11 +16,20 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{b57cacba-2e4e-415c-be1b-9e0ce520e7c6}">
 		<relationship name="effects">
+			<destination>{7a721bde-0be4-4f81-a58e-c90412cb8e16}</destination>
 			<destination>{c302bef0-a633-4d54-a624-9e2c99b3482b}</destination>
 			<destination>{9dc9de2f-b852-4850-9e74-4df7382f831c}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{7249f8e3-7d29-45c9-82f9-2a233c83ea2c}" />
+	<object class="SFXReverbEffect" id="{7a721bde-0be4-4f81-a58e-c90412cb8e16}">
+		<property name="highCut">
+			<value>1700</value>
+		</property>
+		<property name="wetLevel">
+			<value>-1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{c302bef0-a633-4d54-a624-9e2c99b3482b}" />
 	<object class="MultibandEqEffect" id="{9dc9de2f-b852-4850-9e74-4df7382f831c}">
 		<property name="filterTypeA">
