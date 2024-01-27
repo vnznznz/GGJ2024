@@ -37,12 +37,13 @@ public class Card : MonoBehaviour
     {
         rectTransform = GetComponent<RectTransform>();
         comedyActionsLoader = FindObjectOfType<ComedyActionsLoader>();
-        LoadJoke();
+
     }
 
     private void Start()
     {
-
+        text.text = joke.text;
+        title.text = joke.title;
 
     }
 
@@ -80,9 +81,6 @@ public class Card : MonoBehaviour
 
     private void LoadJoke()
     {
-        joke = comedyActionsLoader.comedyActions[UnityEngine.Random.Range(0, comedyActionsLoader.comedyActions.Length)];
-        text.text = joke.text;
-        title.text = joke.title;
 
         switch (title.text)
         {

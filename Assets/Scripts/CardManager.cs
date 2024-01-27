@@ -66,6 +66,8 @@ public class CardManager : MonoBehaviour
     {
         selectionAccu = 0;
         float xPos = -xPadding;
+        var jokes = GameManager.Instance.comedyActionsLoader.GetRandomComedyActions((uint)Mathf.FloorToInt(maxCards));
+        
         for (int i = 0; i < maxCards; i++)
         {
             GameObject cardInstance = Instantiate(cardPrefab, this.transform);
@@ -80,7 +82,7 @@ public class CardManager : MonoBehaviour
             card.newPos = position;
             card.newScale = rectTransform.localScale;
             card.index = i;
-
+            card.joke = jokes[i];
             xPos += xPadding;
         }
 
