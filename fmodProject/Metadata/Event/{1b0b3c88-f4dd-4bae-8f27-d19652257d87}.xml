@@ -72,6 +72,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{fbb678b9-0ecd-4a0e-a088-064f864825bf}">
+		<relationship name="modulators">
+			<destination>{c7d82181-063e-4f91-b2a1-241f07fef1e7}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{b5ad17b8-f281-4c12-8ce1-cbdd15081656}</destination>
 		</relationship>
@@ -112,6 +115,14 @@
 		<relationship name="output">
 			<destination>{fbb678b9-0ecd-4a0e-a088-064f864825bf}</destination>
 		</relationship>
+	</object>
+	<object class="RandomizerModulator" id="{c7d82181-063e-4f91-b2a1-241f07fef1e7}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>3.5</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{b5ad17b8-f281-4c12-8ce1-cbdd15081656}">
 		<relationship name="effects">
