@@ -15,6 +15,11 @@ public class GameManager : MonoBehaviour
 
     public ComedyActionsLoader comedyActionsLoader;
 
+    public CardManager cardManager;
+
+    public GameObject menuCamera;
+    public GameObject gameCamera;
+
     private List<Person> audience = new List<Person>();
 
     public int numCards = 3;
@@ -26,6 +31,7 @@ public class GameManager : MonoBehaviour
 
     public float gameDuration = 60f;
     public float currentGameTime = 0;
+    private float startTime;
 
     public enum GameState
     {
@@ -67,8 +73,10 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        PopulateAudience();
         comedyActionsLoader = GetComponent<ComedyActionsLoader>();
+        cardManager.gameObject.SetActive(false);
+        menuCamera.SetActive(true);
+        gameCamera.SetActive(false);
     }
 
 
@@ -199,5 +207,44 @@ public class GameManager : MonoBehaviour
         string path = "event:/Audience/Silence/Coughing/Couch_" + (index + 1).ToString();
         FMODUnity.RuntimeManager.PlayOneShot(path, Camera.main.transform.position + UnityEngine.Random.insideUnitSphere * 3);
     }
+    public void PrepareNewRound()
+    {
+        ResetRound();
+        gameCamera.SetActive(true);
+        menuCamera.SetActive(false);
+
+        Invoke("StartNewRound",2);
+    }
+
+    public void StartNewRound()
+    {
+        PopulateAudience();
+        cardManager.gameObject.SetActive(true);
+        startTime = Time.time;
+        currentGameTime = 0;
+    }
+
+    private void ResetRound()
+    {
+        Throwable[] thrownStuff = GameObject.FindObjectsOfType<Throwable>();
+        foreach (Throwable throwable in thrownStuff)
+        {
+            Destroy(throwable.gameObject);
+        }
+
+        foreach(Person person in audience)
+        {
+            Destroy(person);
+        }
+        audience.Clear();
+
+    }
+
+    private void ResetGameState()
+    {
+        currentGameTime = 0;
+        gameState = GameState.Round;
+    }
+
 
 }
