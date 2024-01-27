@@ -122,7 +122,7 @@ public class Person : MonoBehaviour
         UpdateMovement();
 
         float enj = 1f - (Math.Clamp(this.enjoymentValue, 1, 100) / 100f);
-        var col = new Color(1f, enj, 1f);
+        var col = Color.Lerp(new Color(1, 0.859f, 0.06f), Color.red, enj);
         meshRenderer.material.SetColor("_Color", col);
 
         transform.LookAt(mainCamera.transform);
@@ -203,6 +203,13 @@ public class Person : MonoBehaviour
         }
 
         if (!silence) React();
+
+        if (behaviorState == BehaviorState.Leaving)
+        {
+            reactionImage.sprite = reactionImages["ded"];
+            reactionImage.color = Color.white;
+            StopCoroutine(hideImageCoroutine);
+        }
     }
 
 

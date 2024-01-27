@@ -313,6 +313,8 @@ MonoBehaviour:
     image: {fileID: 21300000, guid: ef700dfa664bdee5aba9fe13761d8905, type: 3}
   - name: mildunhappy
     image: {fileID: 21300000, guid: d73c85f7476052c408b7651042183d79, type: 3}
+  - name: ded
+    image: {fileID: 21300000, guid: 06c27449800081db5a1126a488d53bf4, type: 3}
 --- !u!114 &1348779886159175262
 MonoBehaviour:
   m_ObjectHideFlags: 0
