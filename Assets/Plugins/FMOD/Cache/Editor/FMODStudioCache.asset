@@ -1,0 +1,737 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9174948009999985365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Audience/Laughing/Female/FemaleMillenialLaugh 4
+  m_EditorClassIdentifier: 
+  Path: event:/Audience/Laughing/Female/FemaleMillenialLaugh 4
+  Guid:
+    Data1: 732998782
+    Data2: 1256136776
+    Data3: 1741037699
+    Data4: 11865942
+  Banks:
+  - {fileID: -1529208436389663575}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4300
+--- !u!114 &-9082492664037031528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Audience/Laughing/Male/MaleBoomerLaugh 2
+  m_EditorClassIdentifier: 
+  Path: event:/Audience/Laughing/Male/MaleBoomerLaugh 2
+  Guid:
+    Data1: 587628957
+    Data2: 1148495081
+    Data3: -665681525
+    Data4: -1581560783
+  Banks:
+  - {fileID: -1529208436389663575}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7400
+--- !u!114 &-8652104124000773451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Audience/Laughing/Male/MaleMillenialLaugh 3
+  m_EditorClassIdentifier: 
+  Path: event:/Audience/Laughing/Male/MaleMillenialLaugh 3
+  Guid:
+    Data1: 1458804671
+    Data2: 1198445404
+    Data3: 2117325488
+    Data4: -1043909836
+  Banks:
+  - {fileID: -1529208436389663575}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2540
+--- !u!114 &-8109619994627792149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Audience/Laughing/Male/MaleGenZLaugh 2
+  m_EditorClassIdentifier: 
+  Path: event:/Audience/Laughing/Male/MaleGenZLaugh 2
+  Guid:
+    Data1: -753223986
+    Data2: 1341533598
+    Data3: -1212884834
+    Data4: -1320398020
+  Banks:
+  - {fileID: -1529208436389663575}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2600
+--- !u!114 &-7452210441410691424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Audience/Laughing/Female/FemaleGenZLaugh 3
+  m_EditorClassIdentifier: 
+  Path: event:/Audience/Laughing/Female/FemaleGenZLaugh 3
+  Guid:
+    Data1: -1717925648
+    Data2: 1262903318
+    Data3: 1206378122
+    Data4: -440220710
+  Banks:
+  - {fileID: -1529208436389663575}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1520
+--- !u!114 &-5642807251839650147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Audience/Laughing/Male/MaleMillenialLaugh
+  m_EditorClassIdentifier: 
+  Path: event:/Audience/Laughing/Male/MaleMillenialLaugh
+  Guid:
+    Data1: 1123359183
+    Data2: 1298056207
+    Data3: 357706655
+    Data4: 976628405
+  Banks:
+  - {fileID: -1529208436389663575}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4000
+--- !u!114 &-5225789587668869972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Audience/Laughing/Female/FemaleGenZLaugh
+  m_EditorClassIdentifier: 
+  Path: event:/Audience/Laughing/Female/FemaleGenZLaugh
+  Guid:
+    Data1: -634350322
+    Data2: 1340779380
+    Data3: -1902622786
+    Data4: -1235187681
+  Banks:
+  - {fileID: -1529208436389663575}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1380
+--- !u!114 &-3293655736063821590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Audience/Laughing/Female/FemaleGenZLaugh 4
+  m_EditorClassIdentifier: 
+  Path: event:/Audience/Laughing/Female/FemaleGenZLaugh 4
+  Guid:
+    Data1: 1997990163
+    Data2: 1252749030
+    Data3: 998561161
+    Data4: 419799513
+  Banks:
+  - {fileID: -1529208436389663575}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2280
+--- !u!114 &-2548679566197162437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Audience/Laughing/Female/FemaleMillenialLaugh 3
+  m_EditorClassIdentifier: 
+  Path: event:/Audience/Laughing/Female/FemaleMillenialLaugh 3
+  Guid:
+    Data1: -1755326612
+    Data2: 1196878565
+    Data3: 1424178566
+    Data4: 1542119040
+  Banks:
+  - {fileID: -1529208436389663575}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3050
+--- !u!114 &-1529208436389663575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: fmodProject/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638419547297450523
+  FileSizes:
+  - Name: Desktop
+    Value: 8311584
+  Exists: 1
+--- !u!114 &-1279445980647484809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Audience/Laughing/Male/MaleGenZLaugh
+  m_EditorClassIdentifier: 
+  Path: event:/Audience/Laughing/Male/MaleGenZLaugh
+  Guid:
+    Data1: -1593665569
+    Data2: 1303142081
+    Data3: 1333023660
+    Data4: 2057604194
+  Banks:
+  - {fileID: -1529208436389663575}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2761
+--- !u!114 &-948521774990641045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Audience/Laughing/Male/MaleBoomerLaugh 4
+  m_EditorClassIdentifier: 
+  Path: event:/Audience/Laughing/Male/MaleBoomerLaugh 4
+  Guid:
+    Data1: -143131665
+    Data2: 1289020542
+    Data3: 622782366
+    Data4: -1481062102
+  Banks:
+  - {fileID: -1529208436389663575}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7550
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 788228627971622693}
+  - {fileID: -1529208436389663575}
+  EditorEvents:
+  - {fileID: -5225789587668869972}
+  - {fileID: -3293655736063821590}
+  - {fileID: 1911236556440611530}
+  - {fileID: 773049064697112095}
+  - {fileID: 522095316314040905}
+  - {fileID: 8068598823481088274}
+  - {fileID: 4903481127128738241}
+  - {fileID: 3410788314481720359}
+  - {fileID: 8303520981245165490}
+  - {fileID: 7044025765911102957}
+  - {fileID: -2548679566197162437}
+  - {fileID: -9174948009999985365}
+  - {fileID: -9082492664037031528}
+  - {fileID: 5399254086425163897}
+  - {fileID: 2695133618907951625}
+  - {fileID: 5255895263571275765}
+  - {fileID: -8652104124000773451}
+  - {fileID: -8109619994627792149}
+  - {fileID: -5642807251839650147}
+  - {fileID: 3694300377945759542}
+  - {fileID: 7781508168979770585}
+  - {fileID: -1279445980647484809}
+  - {fileID: -948521774990641045}
+  - {fileID: -7452210441410691424}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -1529208436389663575}
+  StringsBanks:
+  - {fileID: 788228627971622693}
+  cacheTime: 638419547297516526
+  cacheVersion: 131609
+--- !u!114 &522095316314040905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Audience/Laughing/Male/MaleMillenialLaugh 4
+  m_EditorClassIdentifier: 
+  Path: event:/Audience/Laughing/Male/MaleMillenialLaugh 4
+  Guid:
+    Data1: 1290324267
+    Data2: 1192866252
+    Data3: 675221412
+    Data4: 30290134
+  Banks:
+  - {fileID: -1529208436389663575}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4400
+--- !u!114 &773049064697112095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Audience/Laughing/Female/FemaleBoomerLaugh
+  m_EditorClassIdentifier: 
+  Path: event:/Audience/Laughing/Female/FemaleBoomerLaugh
+  Guid:
+    Data1: 142943776
+    Data2: 1256704954
+    Data3: -914066253
+    Data4: 789100335
+  Banks:
+  - {fileID: -1529208436389663575}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2680
+--- !u!114 &788228627971622693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: fmodProject/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638419547297516526
+  FileSizes:
+  - Name: Desktop
+    Value: 1808
+  Exists: 1
+--- !u!114 &1911236556440611530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Audience/Laughing/Male/MaleGenZLaugh 3
+  m_EditorClassIdentifier: 
+  Path: event:/Audience/Laughing/Male/MaleGenZLaugh 3
+  Guid:
+    Data1: -1408604392
+    Data2: 1212563670
+    Data3: 1923608472
+    Data4: -2137219497
+  Banks:
+  - {fileID: -1529208436389663575}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3000
+--- !u!114 &2695133618907951625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Audience/Laughing/Female/FemaleBoomerLaugh 4
+  m_EditorClassIdentifier: 
+  Path: event:/Audience/Laughing/Female/FemaleBoomerLaugh 4
+  Guid:
+    Data1: 1439989154
+    Data2: 1171921419
+    Data3: -1266932303
+    Data4: -55259903
+  Banks:
+  - {fileID: -1529208436389663575}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3250
+--- !u!114 &3410788314481720359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Audience/Laughing/Male/MaleBoomerLaugh 3
+  m_EditorClassIdentifier: 
+  Path: event:/Audience/Laughing/Male/MaleBoomerLaugh 3
+  Guid:
+    Data1: -1914871989
+    Data2: 1276424687
+    Data3: -718246528
+    Data4: -1402199784
+  Banks:
+  - {fileID: -1529208436389663575}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5050
+--- !u!114 &3694300377945759542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Audience/Laughing/Female/FemaleMillenialLaugh
+  m_EditorClassIdentifier: 
+  Path: event:/Audience/Laughing/Female/FemaleMillenialLaugh
+  Guid:
+    Data1: 1831477199
+    Data2: 1191681405
+    Data3: -1934943872
+    Data4: 978480197
+  Banks:
+  - {fileID: -1529208436389663575}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &4903481127128738241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Audience/Laughing/Female/FemaleGenZLaugh 2
+  m_EditorClassIdentifier: 
+  Path: event:/Audience/Laughing/Female/FemaleGenZLaugh 2
+  Guid:
+    Data1: -1186243260
+    Data2: 1300408447
+    Data3: 359098029
+    Data4: 580371431
+  Banks:
+  - {fileID: -1529208436389663575}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2160
+--- !u!114 &5255895263571275765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Audience/Laughing/Male/MaleMillenialLaugh 2
+  m_EditorClassIdentifier: 
+  Path: event:/Audience/Laughing/Male/MaleMillenialLaugh 2
+  Guid:
+    Data1: -7942233
+    Data2: 1327377360
+    Data3: 314190510
+    Data4: 1987115451
+  Banks:
+  - {fileID: -1529208436389663575}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3200
+--- !u!114 &5399254086425163897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Audience/Laughing/Female/FemaleBoomerLaugh 3
+  m_EditorClassIdentifier: 
+  Path: event:/Audience/Laughing/Female/FemaleBoomerLaugh 3
+  Guid:
+    Data1: 1167969437
+    Data2: 1281904538
+    Data3: -988591709
+    Data4: 592972040
+  Banks:
+  - {fileID: -1529208436389663575}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2550
+--- !u!114 &7044025765911102957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Audience/Laughing/Male/MaleBoomerLaugh
+  m_EditorClassIdentifier: 
+  Path: event:/Audience/Laughing/Male/MaleBoomerLaugh
+  Guid:
+    Data1: -1184484764
+    Data2: 1264681877
+    Data3: 106409600
+    Data4: 837834963
+  Banks:
+  - {fileID: -1529208436389663575}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5000
+--- !u!114 &7781508168979770585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Audience/Laughing/Male/MaleGenZLaugh 4
+  m_EditorClassIdentifier: 
+  Path: event:/Audience/Laughing/Male/MaleGenZLaugh 4
+  Guid:
+    Data1: 663297233
+    Data2: 1154394381
+    Data3: 1534141627
+    Data4: 7879039
+  Banks:
+  - {fileID: -1529208436389663575}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3550
+--- !u!114 &8068598823481088274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Audience/Laughing/Female/FemaleBoomerLaugh 2
+  m_EditorClassIdentifier: 
+  Path: event:/Audience/Laughing/Female/FemaleBoomerLaugh 2
+  Guid:
+    Data1: -107620287
+    Data2: 1203622163
+    Data3: -2047597137
+    Data4: 623581699
+  Banks:
+  - {fileID: -1529208436389663575}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6650
+--- !u!114 &8303520981245165490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Audience/Laughing/Female/FemaleMillenialLaugh 2
+  m_EditorClassIdentifier: 
+  Path: event:/Audience/Laughing/Female/FemaleMillenialLaugh 2
+  Guid:
+    Data1: 1672319584
+    Data2: 1287022407
+    Data3: 755247806
+    Data4: -2025811558
+  Banks:
+  - {fileID: -1529208436389663575}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2140

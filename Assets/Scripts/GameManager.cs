@@ -62,6 +62,8 @@ public class GameManager : MonoBehaviour
     {
         PopulateAudience();
         comedyActionsLoader = GetComponent<ComedyActionsLoader>();
+
+        Invoke("PlayAudio",3);
     }
 
 
@@ -139,6 +141,7 @@ public class GameManager : MonoBehaviour
        currentCards = comedyActionsLoader.GetRandomComedyActions((uint)numCards);
 
         // update ui
+
     }
 
     public void SelectCard(int index)
