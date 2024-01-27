@@ -14,7 +14,21 @@ public class GameManager : MonoBehaviour
 
     private List<Person> audience = new List<Person>();
 
-    int index = 0;
+    public int numCards = 3;
+
+
+    private ComedyAction[] currentCards;
+
+
+    public enum GameState
+    {
+        Menu,
+        Round,
+        GameOver
+    }
+
+    public GameState gameState = GameState.Round;
+    public int roundID = 0;
 
 
     public static GameManager Instance
@@ -59,6 +73,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+    // ========== CUSTOM FUNCTIONS ==========
 
     public void PopulateAudience()
     {
@@ -114,9 +130,21 @@ public class GameManager : MonoBehaviour
 
     }
 
-    void PersonLeave()
+
+    public void StartRound()
     {
-        audience[index].behaviorState = Person.BehaviorState.Leaving;
-        index++;
+        gameState = GameState.Round;
+
+        // Generate random set of cards
+       currentCards = comedyActionsLoader.GetRandomComedyActions((uint)numCards);
+
+        // update ui
+
     }
+
+    public void SelectCard(int index)
+    {
+        TellAJoke(currentCards[index]);
+    }
+
 }
