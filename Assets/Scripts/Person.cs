@@ -206,13 +206,13 @@ public class Person : MonoBehaviour
 
     public void React()
     {
-            switch (behaviorState)
+        switch (behaviorState)
         {
             case BehaviorState.Neutral:
                 PlayAwkwardLaugh();
                 break;
             case BehaviorState.Happy:
-                UpdateHappy();
+                PlayHappyLaugh();
                 break;
             case BehaviorState.Booing:
                 UpdateBooing();
@@ -231,7 +231,7 @@ public class Person : MonoBehaviour
     {
         int laughIndex = Mathf.RoundToInt(UnityEngine.Random.value*4);
 
-        string path = "event:/Audience/Laughing" + "/" + audienceTags[0] + "/" + audienceTags[0] + "_" + audienceTags[1] + "_laugh_" + (laughIndex + 1).ToString();
+        string path = "event:/Audience/AwkwardLaughing" + "/" + audienceTags[0] + "/" + audienceTags[0] + "_" + audienceTags[1] + "_awkward_" + (laughIndex + 1).ToString();
         FMODUnity.RuntimeManager.PlayOneShot(path, transform.position);
     }
 
