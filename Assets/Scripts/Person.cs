@@ -245,9 +245,9 @@ public class Person : MonoBehaviour
 
     private void PlayBooing()
     {
-        int laughIndex = Mathf.RoundToInt(UnityEngine.Random.value * 4);
+        int laughIndex = Mathf.RoundToInt(UnityEngine.Random.value * 2);
 
-        string path = "event:/Audience/Laughing" + "/" + audienceTags[0] + "/" + audienceTags[0] + "_" + audienceTags[1] + "_laugh_" + (laughIndex + 1).ToString();
+        string path = "event:/Audience/Booing" + "/" + audienceTags[0] + "/" + audienceTags[0] + "_" + audienceTags[1] + "_booing_" + (laughIndex + 1).ToString();
         FMODUnity.RuntimeManager.PlayOneShot(path, transform.position);
     }
 
