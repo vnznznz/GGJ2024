@@ -18,8 +18,9 @@ public class GameManager : MonoBehaviour
 
     public CardManager cardManager;
 
-    public GameObject menuCamera;
-    public GameObject gameCamera;
+    private GameObject menuCamera;
+    private GameObject gameCamera;
+    private GameObject mainMenu;
 
     private List<Person> audience = new List<Person>();
 
@@ -95,13 +96,19 @@ public class GameManager : MonoBehaviour
 
     void StartGame()
     {
-        gameState = GameState.Round;
-        PopulateAudience();
-        comedyActionsLoader = GetComponent<ComedyActionsLoader>();
+        gameState = GameState.Menu;
         currentGameTime = 0;
+        comedyActionsLoader = GetComponent<ComedyActionsLoader>();
+
+        cardManager = FindFirstObjectByType<CardManager>(FindObjectsInactive.Include);
+        menuCamera = GameObject.Find("CamPosMenu");
+        gameCamera = GameObject.Find("CamPosGame");
+        mainMenu = GameObject.Find("Menu");
+
         cardManager.gameObject.SetActive(false);
         menuCamera.SetActive(true);
         gameCamera.SetActive(false);
+        mainMenu.SetActive(true);
     }
 
 
@@ -125,7 +132,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         gameState = GameState.GameOver;
-        FindFirstObjectByType<CardManager>().gameObject.SetActive(false);
+        cardManager.gameObject.SetActive(false);
         var gameOverGui = FindFirstObjectByType<GameEndingGui>(FindObjectsInactive.Include);
         gameOverGui.UpdateText(
             "Successful Show!",
@@ -276,9 +283,9 @@ public class GameManager : MonoBehaviour
     }
     public void PrepareNewRound()
     {
-        ResetRound();
         gameCamera.SetActive(true);
         menuCamera.SetActive(false);
+        mainMenu.SetActive(false);
 
         Invoke("StartNewRound",2);
     }
@@ -287,25 +294,13 @@ public class GameManager : MonoBehaviour
     {
         PopulateAudience();
         cardManager.gameObject.SetActive(true);
+        currentCards = comedyActionsLoader.GetRandomComedyActions((uint)numCards);
+        gameState = GameState.Round;
+
         startTime = Time.time;
         currentGameTime = 0;
     }
 
-    private void ResetRound()
-    {
-        Throwable[] thrownStuff = GameObject.FindObjectsOfType<Throwable>();
-        foreach (Throwable throwable in thrownStuff)
-        {
-            Destroy(throwable.gameObject);
-        }
-
-        foreach(Person person in audience)
-        {
-            Destroy(person);
-        }
-        audience.Clear();
-
-    }
 
     private void ResetGameState()
     {
