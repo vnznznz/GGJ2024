@@ -27,7 +27,7 @@ public class CardManager : MonoBehaviour
 
     private TextMeshProUGUI gameTimeText;
     public float pauseTime = 3;
-    public float selectionTime = 6;
+    public float selectionTime = 3;
     private float selectionAccu = 0;
     private void Start()
     {
