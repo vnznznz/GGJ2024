@@ -45,7 +45,7 @@ public class Person : MonoBehaviour
     public Sprite faceLeaving;
     public BehaviorState behaviorState = BehaviorState.Neutral;
 
-
+    public Camera mainCamera;
     public UnityEngine.UI.Image faceImage;
     public string[] audienceTags;
 
@@ -61,6 +61,7 @@ public class Person : MonoBehaviour
         leavingPoint = GameObject.Find("LeavingPosition").transform;
         meshRenderer = GetComponent<MeshRenderer>();
 
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 
         faceImage = transform.Find("Canvas/FaceSprite").GetComponent<UnityEngine.UI.Image>();
         faceImage.sprite = faceNeutral;
@@ -75,6 +76,8 @@ public class Person : MonoBehaviour
         float enj = 1f - (Math.Clamp(this.enjoymentValue, 1, 100) / 100f);
         var col = new Color(1f, enj, 1f);
         meshRenderer.material.SetColor("_Color", col);
+
+        transform.LookAt(mainCamera.transform);
     }
 
 
