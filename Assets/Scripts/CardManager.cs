@@ -20,8 +20,26 @@ public class CardManager : MonoBehaviour
 
     public int activeCard = -1;
 
+    private Bar timeBar;
+
+    public float selectionTime = 3;
+    private float selectionAccu = 0;
+    private void Start() {
+        timeBar = transform.Find("TimebarBar").GetComponent<Bar>();
+    }
     private void Update()
     {
+
+        selectionAccu += Time.deltaTime;
+
+        if (selectionAccu > selectionTime) {
+            selectionAccu = 0;
+            ClearCards();
+            // TODO: negative consequence of missing joke
+        }
+
+        timeBar.currentValue = selectionAccu / selectionTime;
+
         if (transform.GetComponentsInChildren<Card>().Length == 0) {
             LoadCards();
         }
