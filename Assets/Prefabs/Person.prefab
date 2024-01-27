@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 5981556193731571067}
   - component: {fileID: 6676699635532066581}
   - component: {fileID: 4172446145453435144}
+  - component: {fileID: 1348779886159175262}
   m_Layer: 6
   m_Name: Person
   m_TagString: Untagged
@@ -210,6 +211,37 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   faceImage: {fileID: 0}
   audienceTags: []
+--- !u!114 &1348779886159175262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3189576182551522109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 142943776
+      Data2: 1256704954
+      Data3: -914066253
+      Data4: 789100335
+    Path: event:/Audience/Laughing/female/female_boomer_laugh_1
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &3449179794995642214
 GameObject:
   m_ObjectHideFlags: 0

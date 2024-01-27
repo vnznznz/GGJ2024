@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,8 @@ public class GameManager : MonoBehaviour
 
 
     private ComedyAction[] currentCards;
+
+    public Dictionary<string,Dictionary<string,Dictionary<string,Dictionary<int,EventReference>>>> laughingSounds;
 
 
     public enum GameState
@@ -87,8 +90,8 @@ public class GameManager : MonoBehaviour
             GameObject newPerson = Instantiate(PersonPrefab, chair.transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
             var person = newPerson.GetComponent<Person>();
             person.audienceTags = new string[2];
-            person.audienceTags[0] = ageTags[UnityEngine.Random.Range(0, ageTags.Length)];
-            person.audienceTags[1] = genderTags[UnityEngine.Random.Range(0, genderTags.Length)];
+            person.audienceTags[1] = ageTags[UnityEngine.Random.Range(0, ageTags.Length)];
+            person.audienceTags[0] = genderTags[UnityEngine.Random.Range(0, genderTags.Length)];
             audience.Add(newPerson.GetComponent<Person>());
         }
     }

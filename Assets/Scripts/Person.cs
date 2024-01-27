@@ -29,6 +29,8 @@ public class Person : MonoBehaviour
 
     public List<GameObject> throwableObjects;
 
+    private FMODUnity.StudioEventEmitter emitter;
+
     public enum BehaviorState
     {
         Neutral,
@@ -65,6 +67,8 @@ public class Person : MonoBehaviour
 
         faceImage = transform.Find("Canvas/FaceSprite").GetComponent<UnityEngine.UI.Image>();
         faceImage.sprite = faceNeutral;
+
+        emitter = GetComponent<FMODUnity.StudioEventEmitter>();
     }
 
 
@@ -93,6 +97,8 @@ public class Person : MonoBehaviour
         {
             ThrowAtComedian();
         }
+
+        React();
     }
 
 
@@ -196,5 +202,37 @@ public class Person : MonoBehaviour
 
         throwObj.GetComponent<Rigidbody>().AddForce(dirToComedian * 100 + Vector3.up * 50);
 
+    }
+
+    public void React()
+    {
+            switch (behaviorState)
+        {
+            case BehaviorState.Neutral:
+                PlayAwkwardLaugh();
+                break;
+            case BehaviorState.Happy:
+                UpdateHappy();
+                break;
+            case BehaviorState.Booing:
+                UpdateBooing();
+                break;
+            case BehaviorState.Angry:
+                UpdateAngry();
+                break;
+            case BehaviorState.Leaving:
+                UpdateLeaving();
+                break;
+
+        }
+    }
+
+    private void PlayAwkwardLaugh()
+    {
+        int laughIndex = Mathf.RoundToInt(UnityEngine.Random.value*4);
+
+        Debug.Log(emitter.EventReference);
+        string path = "event:/Audience/Laughing" + "/" + audienceTags[0] + "/" + audienceTags[0] + "_" + audienceTags[1] + "_laugh_" + (laughIndex + 1).ToString();
+        FMODUnity.RuntimeManager.PlayOneShot(path, transform.position);
     }
 }
