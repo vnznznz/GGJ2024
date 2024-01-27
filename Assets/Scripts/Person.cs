@@ -146,7 +146,7 @@ public class Person : MonoBehaviour
         yield return null;
     }
 
-    public void ForceEnjoymentUponThee(float enjoymentDelta)
+    public void ForceEnjoymentUponThee(float enjoymentDelta, bool silence)
     {
         enjoymentValue += enjoymentDelta;
 
@@ -190,7 +190,7 @@ public class Person : MonoBehaviour
             ThrowAtComedian();
         }
 
-        React();
+        if(!silence) React();
     }
 
 
