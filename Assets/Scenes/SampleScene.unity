@@ -1883,7 +1883,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9194502001488256367, guid: 2edbeafb86fe40142874fe2ba498e2ab, type: 3}
       propertyPath: m_UiScaleMode
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194502001488256367, guid: 2edbeafb86fe40142874fe2ba498e2ab, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194502001488256367, guid: 2edbeafb86fe40142874fe2ba498e2ab, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
