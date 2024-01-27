@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
@@ -24,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     public Dictionary<string, Dictionary<string, Dictionary<string, Dictionary<int, EventReference>>>> laughingSounds;
 
-    public float gameDuration = 60f;
+    public float gameDuration = 5f;
     public float currentGameTime = 0;
 
     public enum GameState
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
 
     public GameState gameState = GameState.Round;
     public int roundID = 0;
+
 
 
     public static GameManager Instance
@@ -54,6 +56,8 @@ public class GameManager : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
 
+
+
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -61,32 +65,80 @@ public class GameManager : MonoBehaviour
         else
         {
             instance = this;
-
+            SceneManager.activeSceneChanged -= ChangedActiveScene;
+            SceneManager.activeSceneChanged += ChangedActiveScene;
         }
+
     }
 
-    void Start()
+
+    private void ChangedActiveScene(Scene current, Scene next)
     {
+        string currentName = current.name;
+
+        if (currentName == null)
+        {
+            // Scene1 has been removed
+            currentName = "Replaced";
+        }
+
+        Debug.Log("Scenes: " + currentName + ", " + next.name);
+
+        StartGame();
+    }
+
+    void StartGame()
+    {
+        gameState = GameState.Round;
         PopulateAudience();
         comedyActionsLoader = GetComponent<ComedyActionsLoader>();
+        currentGameTime = 0;
+
+
     }
 
 
     void Update()
     {
+
+
         currentGameTime += Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.Space))
+
+        if (getTimeLeft() <= 0)
         {
+            GameOver();
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            GameOver();
             //TellAJoke(comedyActionsLoader.comedyActions[UnityEngine.Random.Range(0, comedyActionsLoader.comedyActions.Length)]);
         }
     }
 
+    public void GameOver()
+    {
+        gameState = GameState.GameOver;
+        FindFirstObjectByType<CardManager>().gameObject.SetActive(false);
+        var gameOverGui = FindFirstObjectByType<GameEndingGui>(FindObjectsInactive.Include);
+        gameOverGui.UpdateText(
+            "Successful Show!",
+            $"Only {this.getDissatisfiedAudienceCountCalculationRoutine()} of {this.audience.Count} guests left the show.");
+        gameOverGui.gameObject.SetActive(true);
+    }
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        gameState = GameState.GameOver;
+
+    }
 
     // ========== CUSTOM FUNCTIONS ==========
 
     public void PopulateAudience()
     {
         GameObject[] chairs = GameObject.FindGameObjectsWithTag("Chair");
+        audience = new List<Person>();
 
         string[] ageTags = { "boomer", "millenial", "genz" };
         string[] genderTags = { "male", "female" };
@@ -101,6 +153,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public float getTimeLeft()
+    {
+        return gameDuration - currentGameTime;
+    }
     public void MissJoke()
     {
         foreach (Person person in audience)
@@ -147,6 +203,18 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public int getDissatisfiedAudienceCountCalculationRoutine()
+    {
+        int sum = 0;
+        foreach (var item in audience)
+        {
+            if (item.enjoymentValue <= 0f)
+            { sum += 1; }
+
+        }
+
+        return sum;
+    }
     public float getAudienceSatisfaction()
     {
         float sumEnjoyment = 0f;
