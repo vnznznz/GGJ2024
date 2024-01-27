@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using System.Xml.Schema;
 
 public class Card : MonoBehaviour
 {
@@ -22,6 +24,14 @@ public class Card : MonoBehaviour
     public ComedyAction joke;
 
     ComedyActionsLoader comedyActionsLoader;
+
+    public Sprite punImage;
+    public Sprite parodyImage;
+    public Sprite blondeImage;
+    public Sprite slapstickImage;
+    public Sprite lastImage;
+
+    public Image image;
 
     private void Awake()
     {
@@ -74,5 +84,27 @@ public class Card : MonoBehaviour
         text.text = joke.text;
         title.text = joke.title;
 
+        switch (title.text)
+        {
+            case "Pun":
+                image.sprite = punImage;
+                break;
+
+            case "Parody":
+                image.sprite = parodyImage;
+                break;
+
+            case "Blonde":
+                image.sprite = blondeImage;
+                break;
+
+            case "Slapstick":
+                image.sprite = slapstickImage;
+                break;
+
+            default:
+                image.sprite = punImage;
+                break;
+        }
     }
 }
