@@ -111,6 +111,8 @@ public class Person : MonoBehaviour
         meshRenderer.material.SetColor("_Color", col);
 
         transform.LookAt(mainCamera.transform);
+
+        enjoymentValue = Math.Clamp(enjoymentValue, -1, 100);
     }
 
 
