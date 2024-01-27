@@ -298,7 +298,8 @@ public class Person : MonoBehaviour
 
         Vector3 dirToComedian = (GameObject.Find("Comedian").transform.position - transform.position).normalized;
 
-        throwObj.GetComponent<Rigidbody>().AddForce(dirToComedian * 100 + Vector3.up * 50);
+        throwObj.GetComponent<Rigidbody>().AddForce(dirToComedian * 100 + Vector3.up * 70);
+        throwObj.GetComponent<Rigidbody>().AddTorque(UnityEngine.Random.insideUnitSphere);
 
     }
 
