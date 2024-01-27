@@ -249,6 +249,84 @@
                     "value": 5
                 }
             ]
+        },
+        {
+            "title": "Slapstick",
+            "text": "Trip over your own shoes.",
+            "result": [
+                {
+                    "audience": "male",
+                    "value": 10
+                },
+                {
+                    "audience": "female",
+                    "value": -5
+                },
+                {
+                    "audience": "boomer",
+                    "value": 10
+                },
+                {
+                    "audience": "millenial",
+                    "value": 5
+                },
+                {
+                    "audience": "genz",
+                    "value": -10
+                }
+            ]
+        },
+        {
+            "title": "Slapstick",
+            "text": "Teach someone in the audience to do a handstand.",
+            "result": [
+                {
+                    "audience": "male",
+                    "value": 10
+                },
+                {
+                    "audience": "female",
+                    "value": 0
+                },
+                {
+                    "audience": "boomer",
+                    "value": -5
+                },
+                {
+                    "audience": "millenial",
+                    "value": 5
+                },
+                {
+                    "audience": "genz",
+                    "value": 5
+                }
+            ]
+        },
+        {
+            "title": "Pun",
+            "text": "The past, the present, and the future walked into a bar. It was tense.",
+            "result": [
+                {
+                    "audience": "male",
+                    "value": 0
+                },
+                {
+                    "audience": "female",
+                    "value": 5
+                },
+                {
+                    "audience": "boomer",
+                    "value": 10
+                },
+                {
+                    "audience": "millenial",
+                    "value": 5
+                },
+                {
+                    "audience": "genz",
+                    "value": -5
+                }
+            ]
         }
     ]
 }
