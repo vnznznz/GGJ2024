@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class Person : MonoBehaviour
 {
@@ -36,8 +38,15 @@ public class Person : MonoBehaviour
         Leaving
     }
 
+    public Sprite faceNeutral;
+    public Sprite faceHappy;
+    public Sprite faceBooing;
+    public Sprite faceAngry;
+    public Sprite faceLeaving;
     public BehaviorState behaviorState = BehaviorState.Neutral;
 
+
+    public UnityEngine.UI.Image faceImage;
     public string[] audienceTags;
 
     void Start()
@@ -45,12 +54,16 @@ public class Person : MonoBehaviour
         startPosition = transform.position;
         targetPosition = transform.position;
         currentPosition = transform.position;
-        randomXOffset = UnityEngine.Random.Range(0,0.5f);
+        randomXOffset = UnityEngine.Random.Range(0, 0.5f);
 
         currentWobblePhase = new Vector3(UnityEngine.Random.value, UnityEngine.Random.value, UnityEngine.Random.value);
 
         leavingPoint = GameObject.Find("LeavingPosition").transform;
         meshRenderer = GetComponent<MeshRenderer>();
+
+
+        faceImage = transform.Find("Canvas/FaceSprite").GetComponent<UnityEngine.UI.Image>();
+        faceImage.sprite = faceNeutral;
     }
 
 
@@ -67,13 +80,13 @@ public class Person : MonoBehaviour
 
     public void SetBehavior()
     {
-        if(enjoymentValue >= 70) behaviorState = BehaviorState.Happy;
+        if (enjoymentValue >= 70) behaviorState = BehaviorState.Happy;
         else if (enjoymentValue >= 40) behaviorState = BehaviorState.Neutral;
         else if (enjoymentValue >= 20) behaviorState = BehaviorState.Booing;
         else if (enjoymentValue >= 0.1) behaviorState = BehaviorState.Angry;
         else behaviorState = BehaviorState.Leaving;
 
-        if(enjoymentValue >10 && enjoymentValue < 40)
+        if (enjoymentValue > 10 && enjoymentValue < 40)
         {
             ThrowAtComedian();
         }
@@ -125,30 +138,34 @@ public class Person : MonoBehaviour
     {
         targetWobbleAmplitude = new Vector3(0.01f, 0.05f, 0.01f);
         targetWobbleFrequency = new Vector3(0.5f, 0.5f, 0.5f);
+        faceImage.sprite = faceNeutral;
     }
     private void UpdateHappy()
     {
         targetWobbleAmplitude = new Vector3(0.01f, 0.2f, 0.01f);
         targetWobbleFrequency = new Vector3(0.5f, 0.8f, 0.5f);
+        faceImage.sprite = faceHappy;
     }
 
     private void UpdateBooing()
     {
         targetWobbleAmplitude = new Vector3(0.05f, 0.2f, 0.05f);
         targetWobbleFrequency = new Vector3(0.8f, 1f, 0.8f);
+        faceImage.sprite = faceBooing;
     }
 
     private void UpdateAngry()
     {
         targetWobbleAmplitude = new Vector3(0.05f, 0.3f, 0.05f);
         targetWobbleFrequency = new Vector3(0.8f, 5f, 0.8f);
+        faceImage.sprite = faceAngry;
     }
 
     private void UpdateLeaving()
     {
-        targetWobbleAmplitude = new Vector3(0,0.1f,0);
-        targetWobbleFrequency = new Vector3(0,2,0);
-
+        targetWobbleAmplitude = new Vector3(0, 0.1f, 0);
+        targetWobbleFrequency = new Vector3(0, 2, 0);
+        faceImage.sprite = faceLeaving;
         Vector3 pos = transform.position;
         float dif = Mathf.Abs(targetPosition.x - (leavingPoint.position.x));
         if (dif > 0.1f + randomXOffset) targetPosition.x -= Mathf.Sign(targetPosition.x - leavingPoint.position.x) * Time.deltaTime * 2;
@@ -160,22 +177,21 @@ public class Person : MonoBehaviour
     {
         int numThrows = (int)UnityEngine.Random.Range(1, 3);
 
-        for(int  i = 0; i < numThrows; i++)
+        for (int i = 0; i < numThrows; i++)
         {
-            Invoke("ThrowObject", i*0.5f+UnityEngine.Random.Range(0,0.3f));
+            Invoke("ThrowObject", i * 0.5f + UnityEngine.Random.Range(0, 0.3f));
         }
 
     }
 
     private void ThrowObject()
     {
-        int randIndex = Mathf.RoundToInt(UnityEngine.Random.value*(throwableObjects.Count-1));
+        int randIndex = Mathf.RoundToInt(UnityEngine.Random.value * (throwableObjects.Count - 1));
         GameObject throwObj = Instantiate(throwableObjects[randIndex], transform.position, Quaternion.identity);
 
         Vector3 dirToComedian = (GameObject.Find("Comedian").transform.position - transform.position).normalized;
 
-        throwObj.GetComponent<Rigidbody>().AddForce(dirToComedian*100+Vector3.up*50);
+        throwObj.GetComponent<Rigidbody>().AddForce(dirToComedian * 100 + Vector3.up * 50);
 
     }
 }
-
