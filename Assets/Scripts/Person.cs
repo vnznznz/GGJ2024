@@ -65,6 +65,8 @@ public class Person : MonoBehaviour
     public NamedImage[] audienceHairImages;
     public NamedImage[] reactionIconImages;
 
+    private Coroutine hideImageCoroutine;
+
     private Dictionary<string, Sprite> reactionImages = new Dictionary<string, Sprite>();
     void Start()
     {
@@ -130,23 +132,23 @@ public class Person : MonoBehaviour
 
     private IEnumerator HideReactionIcon(float seconds)
     {
-        yield return new WaitForSeconds(1);
 
         float alpha = 1;
-        reactionImage.material.color = new Color(1f, 1f, 1f, 1f);
+        reactionImage.color = new Color(1f, 1f, 1f, 1f);
+
         for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / seconds)
         {
-            Color newColor = new Color(1, 1, 1, Mathf.Lerp(alpha, 0, t));
-            reactionImage.material.color = newColor;
+            Color newColor = new Color(1f, 1f, 1f, Mathf.Lerp(alpha, 0, t));
+            reactionImage.color = newColor;
             yield return null;
         }
 
-        reactionImage.gameObject.SetActive(false);
         reactionImage.sprite = null;
+
         yield return null;
     }
 
-    public void ForceEnjoymentUponThee(float enjoymentDelta)
+    public void ForceEnjoymentUponThee(float enjoymentDelta, bool silence)
     {
         enjoymentValue += enjoymentDelta;
 
@@ -175,9 +177,13 @@ public class Person : MonoBehaviour
             reactionImage.sprite = reactionImages["question"];
         }
 
-        reactionImage.gameObject.SetActive(true);
 
-        StartCoroutine(HideReactionIcon(3));
+
+        if (hideImageCoroutine != null)
+        {
+            StopCoroutine(hideImageCoroutine);
+        }
+        hideImageCoroutine = StartCoroutine(HideReactionIcon(3));
 
         if (enjoymentValue >= 70) behaviorState = BehaviorState.Happy;
         else if (enjoymentValue >= 40) behaviorState = BehaviorState.Neutral;
@@ -190,7 +196,7 @@ public class Person : MonoBehaviour
             ThrowAtComedian();
         }
 
-        React();
+        if(!silence) React();
     }
 
 

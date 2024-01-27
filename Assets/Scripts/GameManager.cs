@@ -102,8 +102,10 @@ public class GameManager : MonoBehaviour
     {
         foreach (Person person in audience)
         {
-            person.ForceEnjoymentUponThee(-5);
+            person.ForceEnjoymentUponThee(-5, true);
         }
+
+        PlayAwkwardSilence();
     }
 
     public void TellAJoke(ComedyAction joke)
@@ -136,7 +138,7 @@ public class GameManager : MonoBehaviour
         foreach (var item in enjoymentValues.Keys)
         {
             // TODO:  notify person about enjoyment value change so it can display an emoji
-            item.ForceEnjoymentUponThee(enjoymentValues[item]);
+            item.ForceEnjoymentUponThee(enjoymentValues[item],false);
             Debug.Log($"{item.audienceTags[0]}, {item.audienceTags[1]}: {enjoymentValues[item]}");
         }
 
@@ -163,7 +165,7 @@ public class GameManager : MonoBehaviour
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/Audience/Silence/crickets", transform.position);
 
-        int numCoughs = UnityEngine.Random.Range(0, 4);
+        int numCoughs = (int)UnityEngine.Random.Range(0, 4);
 
         for(int i=0; i<numCoughs; i++) 
         {
@@ -175,8 +177,8 @@ public class GameManager : MonoBehaviour
 
     private void PlayCough()
     {
-        int index = Mathf.Clamp(Mathf.RoundToInt(UnityEngine.Random.value * 4), 0, 3);
-        string path = "event:/Audience/Silence/Coughing/Cough_" + (index + 1).ToString();
+        int index = Mathf.Clamp(Mathf.RoundToInt(UnityEngine.Random.value * 7), 0, 6);
+        string path = "event:/Audience/Silence/Coughing/Couch_" + (index + 1).ToString();
         FMODUnity.RuntimeManager.PlayOneShot(path, Camera.main.transform.position+UnityEngine.Random.insideUnitSphere*3);
     }
 
