@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.ProBuilder;
 using UnityEngine.UI;
@@ -22,12 +23,17 @@ public class CardManager : MonoBehaviour
 
     private Bar timeBar;
 
+    private Bar audienceBar;
+
+    private TextMeshProUGUI gameTimeText;
     public float pauseTime = 3;
     public float selectionTime = 6;
     private float selectionAccu = 0;
     private void Start()
     {
         timeBar = transform.Find("TimebarBar").GetComponent<Bar>();
+        audienceBar = transform.Find("AudienceBar").GetComponent<Bar>();
+        gameTimeText = transform.Find("TimeLeft").GetComponent<TextMeshProUGUI>();
     }
     private void Update()
     {
@@ -42,6 +48,8 @@ public class CardManager : MonoBehaviour
         }
 
         timeBar.currentValue = selectionAccu / selectionTime;
+        audienceBar.currentValue = GameManager.Instance.getAudienceSatisfaction();
+        gameTimeText.text = $"{GameManager.Instance.currentGameTime}";
 
         if (transform.GetComponentsInChildren<Card>().Length == 0)
         {
@@ -67,7 +75,7 @@ public class CardManager : MonoBehaviour
         selectionAccu = 0;
         float xPos = -xPadding;
         var jokes = GameManager.Instance.comedyActionsLoader.GetRandomComedyActions((uint)Mathf.FloorToInt(maxCards));
-        
+
         for (int i = 0; i < maxCards; i++)
         {
             GameObject cardInstance = Instantiate(cardPrefab, this.transform);
