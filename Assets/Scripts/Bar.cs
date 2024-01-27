@@ -11,6 +11,9 @@ public class Bar : MonoBehaviour
     public float maxHeight = 512;
     public float currentValue = 0;
 
+    public Color minColor = Color.white;
+    public Color maxColor = Color.red;
+
     private RectTransform rectTransform;
     private UnityEngine.UI.Image image;
     // Start is called before the first frame update
@@ -25,6 +28,6 @@ public class Bar : MonoBehaviour
     {
         rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, currentValue * maxHeight);
 
-        this.image.color = Color.Lerp(Color.green, Color.red, currentValue);
+        this.image.color = Color.Lerp(minColor, maxColor, currentValue);
     }
 }

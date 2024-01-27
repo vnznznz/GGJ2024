@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
 
     public Dictionary<string, Dictionary<string, Dictionary<string, Dictionary<int, EventReference>>>> laughingSounds;
 
+    public float gameDuration = 60f;
+    public float currentGameTime = 0;
 
     public enum GameState
     {
@@ -72,6 +74,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        currentGameTime += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //TellAJoke(comedyActionsLoader.comedyActions[UnityEngine.Random.Range(0, comedyActionsLoader.comedyActions.Length)]);
@@ -138,12 +141,27 @@ public class GameManager : MonoBehaviour
         foreach (var item in enjoymentValues.Keys)
         {
             // TODO:  notify person about enjoyment value change so it can display an emoji
-            item.ForceEnjoymentUponThee(enjoymentValues[item],false);
+            item.ForceEnjoymentUponThee(enjoymentValues[item], false);
             Debug.Log($"{item.audienceTags[0]}, {item.audienceTags[1]}: {enjoymentValues[item]}");
         }
 
     }
 
+    public float getAudienceSatisfaction()
+    {
+        float sumEnjoyment = 0f;
+
+        foreach (var item in audience)
+        {
+            if (item.enjoymentValue > 0f)
+            { sumEnjoyment += 1f; }
+        }
+
+        sumEnjoyment /= audience.Count;
+
+        return sumEnjoyment;
+
+    }
 
     public void StartRound()
     {
@@ -167,9 +185,9 @@ public class GameManager : MonoBehaviour
 
         int numCoughs = (int)UnityEngine.Random.Range(0, 4);
 
-        for(int i=0; i<numCoughs; i++) 
+        for (int i = 0; i < numCoughs; i++)
         {
-            Invoke("PlayCough",i*0.6f+UnityEngine.Random.value*0.5f);
+            Invoke("PlayCough", i * 0.6f + UnityEngine.Random.value * 0.5f);
         }
 
 
@@ -179,7 +197,7 @@ public class GameManager : MonoBehaviour
     {
         int index = Mathf.Clamp(Mathf.RoundToInt(UnityEngine.Random.value * 7), 0, 6);
         string path = "event:/Audience/Silence/Coughing/Couch_" + (index + 1).ToString();
-        FMODUnity.RuntimeManager.PlayOneShot(path, Camera.main.transform.position+UnityEngine.Random.insideUnitSphere*3);
+        FMODUnity.RuntimeManager.PlayOneShot(path, Camera.main.transform.position + UnityEngine.Random.insideUnitSphere * 3);
     }
 
 }

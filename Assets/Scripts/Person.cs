@@ -149,7 +149,13 @@ public class Person : MonoBehaviour
     }
 
     public void ForceEnjoymentUponThee(float enjoymentDelta, bool silence)
+
     {
+        if (enjoymentValue < 0)
+        {
+            ThrowAtComedian();
+            return;
+        }
         enjoymentValue += enjoymentDelta;
 
         if (enjoymentDelta >= 10)
@@ -196,7 +202,7 @@ public class Person : MonoBehaviour
             ThrowAtComedian();
         }
 
-        if(!silence) React();
+        if (!silence) React();
     }
 
 
