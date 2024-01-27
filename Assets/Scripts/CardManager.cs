@@ -22,7 +22,10 @@ public class CardManager : MonoBehaviour
 
     private void Update()
     {
-        LoadStartCards();
+        if (transform.GetComponentsInChildren<Card>().Length == 0) {
+            LoadCards();
+        }
+
 
         if (Input.GetKeyDown(KeyCode.L))
         {
@@ -30,27 +33,43 @@ public class CardManager : MonoBehaviour
         }
     }
 
-    private void LoadStartCards()
+    private void ClearCards()
     {
-        
-        if (Input.GetKeyDown(KeyCode.Space))
+        foreach (var card in transform.GetComponentsInChildren<Card>())
         {
-            float xPos = -xPadding;
-            for (int i = 0; i < maxCards; i++)
-            {
-                GameObject cardInstance = Instantiate(cardPrefab, this.transform);
-                Card card = cardInstance.GetComponent<Card>();
-                RectTransform rectTransform = cardInstance.GetComponent<RectTransform>();
-                rectTransform.localPosition = new Vector3(xPos, defaultYPos, 0);
-
-                card.cardManager = this;
-                card.startPos = rectTransform.position;
-                card.startScale = rectTransform.localScale;
-                card.index = i;
-
-                xPos += xPadding;
-            }
+            Destroy(card.gameObject);
         }
+    }
+    private void LoadCards()
+    {
+        float xPos = -xPadding;
+        for (int i = 0; i < maxCards; i++)
+        {
+            GameObject cardInstance = Instantiate(cardPrefab, this.transform);
+            Card card = cardInstance.GetComponent<Card>();
+            RectTransform rectTransform = cardInstance.GetComponent<RectTransform>();
+            var position = new Vector3(xPos, defaultYPos, 0);
+            rectTransform.localPosition = new Vector3(-590, -800, 0);
+
+            card.cardManager = this;
+            card.startPos = position;
+            card.startScale = rectTransform.localScale;
+            card.newPos = position;
+            card.newScale = rectTransform.localScale;
+            card.index = i;
+
+            xPos += xPadding;
+        }
+
+    }
+
+    public void TriggerCardActivation(Card card)
+    {
+
+        GameManager.Instance.TellAJoke(card.joke);
+        ClearCards();
+        LoadCards();
+
     }
 
     public void LoadNewCard(int index)
@@ -70,6 +89,7 @@ public class CardManager : MonoBehaviour
 
     }
 
+
     private Card GetCardByIndex(int index)
     {
         foreach (Transform child in this.transform)
@@ -83,6 +103,11 @@ public class CardManager : MonoBehaviour
         return null;
     }
 
+    public void Awake()
+    {
+
+    }
+
     private IEnumerator SetNewPos(GameObject cardObj, Vector3 newPos, Vector3 newScale, Vector3 oldPos, Vector3 oldScale)
     {
         Card card = cardObj.GetComponent<Card>();
@@ -90,6 +115,6 @@ public class CardManager : MonoBehaviour
         card.newPos = newPos;
         card.newScale = newScale;
         card.startPos = oldPos;
-        card.startScale = oldScale; 
+        card.startScale = oldScale;
     }
 }
