@@ -464,6 +464,12 @@ MonoBehaviour:
     title: 
     text: 
     result: []
+  punImage: {fileID: 21300000, guid: 999774e91446ada498da3a845fc0a60e, type: 3}
+  parodyImage: {fileID: 21300000, guid: ac02a1530c9382e41ac4ffdcc92ead64, type: 3}
+  blondeImage: {fileID: 21300000, guid: b507d6dbd3de9a1419c5d96c7a3600f9, type: 3}
+  slapstickImage: {fileID: 21300000, guid: afe6fb495a8cbe14f8b7e440b00d0768, type: 3}
+  lastImage: {fileID: 21300000, guid: 90b1e19ce4caf634d88c4fd4c5351eb5, type: 3}
+  image: {fileID: 828336857549010670}
 --- !u!114 &3080968538952404499
 MonoBehaviour:
   m_ObjectHideFlags: 0
