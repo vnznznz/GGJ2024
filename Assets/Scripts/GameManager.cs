@@ -169,7 +169,7 @@ public class GameManager : MonoBehaviour
     private void PlayCough()
     {
         int index = Mathf.Clamp(Mathf.RoundToInt(UnityEngine.Random.value * 4), 0, 3);
-        string path = "event:/Audience/Akward/Coughing" + (index + 1).ToString();
+        string path = "event:/Audience/Silence/Coughing/Cough_" + (index + 1).ToString();
         FMODUnity.RuntimeManager.PlayOneShot(path, Camera.main.transform.position+UnityEngine.Random.insideUnitSphere*3);
     }
 
