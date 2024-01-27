@@ -6,15 +6,67 @@
             "result": [
                 {
                     "audience": "male",
-                    "value": 30
+                    "value": 15
                 },
                 {
                     "audience": "boomer",
-                    "value": 20
+                    "value": 10
                 },
                 {
                     "audience": "female",
-                    "value": -15
+                    "value": -8
+                },
+                {
+                    "audience": "millenial",
+                    "value": 2
+                },
+                {
+                    "audience": "genz",
+                    "value": -16
+                }
+            ]
+        },
+        {
+            "title": "Blonde",
+            "text": "Tell a joke about a blonde women getting lost in the desert.",
+            "result": [
+                {
+                    "audience": "male",
+                    "value": 15
+                },
+                {
+                    "audience": "boomer",
+                    "value": 10
+                },
+                {
+                    "audience": "female",
+                    "value": -8
+                },
+                {
+                    "audience": "millenial",
+                    "value": 2
+                },
+                {
+                    "audience": "genz",
+                    "value": -16
+                }
+            ]
+        },
+        {
+            "title": "Blonde",
+            "text": "Tell a joke about a blonde women putting her iPad in a blender.",
+            "result": [
+                {
+                    "audience": "male",
+                    "value": 10
+                },
+                {
+                    "audience": "boomer",
+                    "value": 10
+                },
+                {
+                    "audience": "female",
+                    "value": -8
                 },
                 {
                     "audience": "millenial",
@@ -22,14 +74,44 @@
                 },
                 {
                     "audience": "genz",
-                    "value": -30
+                    "value": -16
                 }
             ]
         },
         {
-            "title": "Politics",
-            "text": "Re-tell the latest debate about cannabis legalization, exaggerating the role of the aging justice minister.",
+            "title": "Pun",
+            "text": "Mispronouncing the name of the chinese minister of transportation.",
             "result": [
+                {
+                    "audience": "male",
+                    "value": 5
+                },
+                {
+                    "audience": "boomer",
+                    "value": 10
+                },
+                {
+                    "audience": "millenial",
+                    "value": -2
+                },
+                {
+                    "audience": "genz",
+                    "value": -10
+                }
+            ]
+        },
+        {
+            "title": "Pun",
+            "text": "A poem with several rhymes for orange.",
+            "result": [
+                {
+                    "audience": "male",
+                    "value": 5
+                },
+                {
+                    "audience": "female",
+                    "value": -5
+                },
                 {
                     "audience": "boomer",
                     "value": -5
@@ -40,21 +122,61 @@
                 },
                 {
                     "audience": "genz",
-                    "value": 30
+                    "value": 5
                 }
             ]
         },
         {
-            "title": "Language",
-            "text": "Make a pun by mispronouncing the name of a chinese politication",
+            "title": "Pun",
+            "text": "Several cringe puns about male genitalia.",
             "result": [
                 {
                     "audience": "male",
-                    "value": 5
+                    "value": -15
+                },
+                {
+                    "audience": "female",
+                    "value": 10
                 },
                 {
                     "audience": "boomer",
-                    "value": 20
+                    "value": -5
+                },
+                {
+                    "audience": "millenial",
+                    "value": 10
+                },
+                {
+                    "audience": "genz",
+                    "value": 10
+                }
+            ]
+        },
+        {
+            "title": "Parody",
+            "text": "Re-tell the latest debate about cannabis legalization, exaggerating the role of the aging justice minister.",
+            "result": [
+                {
+                    "audience": "boomer",
+                    "value": -5
+                },
+                {
+                    "audience": "millenial",
+                    "value": 5
+                },
+                {
+                    "audience": "genz",
+                    "value": 15
+                }
+            ]
+        },
+        {
+            "title": "Parody",
+            "text": "Re-tell the typical day of a TikTok creator in an exaggerated way",
+            "result": [
+                {
+                    "audience": "boomer",
+                    "value": 10
                 },
                 {
                     "audience": "millenial",
@@ -62,7 +184,69 @@
                 },
                 {
                     "audience": "genz",
-                    "value": -15
+                    "value": -10
+                }
+            ]
+        },
+        {
+            "title": "Parody",
+            "text": "Tell a story about your dad being unable to find the eggs in a grocery store.",
+            "result": [
+                {
+                    "audience": "male",
+                    "value": -5
+                },
+                {
+                    "audience": "female",
+                    "value": 10
+                },
+                {
+                    "audience": "genz",
+                    "value": 5
+                }
+            ]
+        },
+        {
+            "title": "Parody",
+            "text": "Tell a story about your dad being unable to find the eggs in a grocery store.",
+            "result": [
+                {
+                    "audience": "male",
+                    "value": -5
+                },
+                {
+                    "audience": "female",
+                    "value": 10
+                },
+                {
+                    "audience": "genz",
+                    "value": 5
+                }
+            ]
+        },
+        {
+            "title": "Parody",
+            "text": "Sing the german national anthem with a saxonion dialect.",
+            "result": [
+                {
+                    "audience": "male",
+                    "value": 5
+                },
+                {
+                    "audience": "female",
+                    "value": -5
+                },
+                {
+                    "audience": "boomer",
+                    "value": -10
+                },
+                {
+                    "audience": "millenial",
+                    "value": 10
+                },
+                {
+                    "audience": "genz",
+                    "value": 5
                 }
             ]
         }
