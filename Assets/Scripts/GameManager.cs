@@ -1,6 +1,8 @@
 using FMODUnity;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -148,6 +150,27 @@ public class GameManager : MonoBehaviour
     public void SelectCard(int index)
     {
         TellAJoke(currentCards[index]);
+    }
+
+    public void PlayAwkwardSilence()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Audience/Silence/crickets", transform.position);
+
+        int numCoughs = UnityEngine.Random.Range(0, 4);
+
+        for(int i=0; i<numCoughs; i++) 
+        {
+            Invoke("PlayCough",i*0.6f+UnityEngine.Random.value*0.5f);
+        }
+
+
+    }
+
+    private void PlayCough()
+    {
+        int index = Mathf.Clamp(Mathf.RoundToInt(UnityEngine.Random.value * 4), 0, 3);
+        string path = "event:/Audience/Akward/Coughing" + (index + 1).ToString();
+        FMODUnity.RuntimeManager.PlayOneShot(path, Camera.main.transform.position+UnityEngine.Random.insideUnitSphere*3);
     }
 
 }
