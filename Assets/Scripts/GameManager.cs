@@ -62,8 +62,6 @@ public class GameManager : MonoBehaviour
     {
         PopulateAudience();
         comedyActionsLoader = GetComponent<ComedyActionsLoader>();
-
-        Invoke("PlayAudio",3);
     }
 
 

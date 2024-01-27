@@ -4052,7 +4052,6 @@ MonoBehaviour:
   PersonPrefab: {fileID: 3189576182551522109, guid: aa2d8b2cad8bb31448a9c5a05c90a397, type: 3}
   comedyActionsLoader: {fileID: 0}
   numCards: 3
-  emitter: {fileID: 0}
   gameState: 1
   roundID: 0
 --- !u!4 &1985190241
