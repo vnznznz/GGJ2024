@@ -25,6 +25,8 @@ public class Person : MonoBehaviour
 
     private Transform leavingPoint;
 
+    public List<GameObject> throwableObjects;
+
     public enum BehaviorState
     {
         Neutral,
@@ -70,6 +72,11 @@ public class Person : MonoBehaviour
         else if (enjoymentValue >= 20) behaviorState = BehaviorState.Booing;
         else if (enjoymentValue >= 0.1) behaviorState = BehaviorState.Angry;
         else behaviorState = BehaviorState.Leaving;
+
+        if(enjoymentValue >10 && enjoymentValue < 40)
+        {
+            ThrowAtComedian();
+        }
     }
 
 
@@ -146,6 +153,28 @@ public class Person : MonoBehaviour
         float dif = Mathf.Abs(targetPosition.x - (leavingPoint.position.x));
         if (dif > 0.1f + randomXOffset) targetPosition.x -= Mathf.Sign(targetPosition.x - leavingPoint.position.x) * Time.deltaTime * 2;
         else targetPosition.z += Time.deltaTime * 2;
+
+    }
+
+    public void ThrowAtComedian()
+    {
+        int numThrows = (int)UnityEngine.Random.Range(1, 3);
+
+        for(int  i = 0; i < numThrows; i++)
+        {
+            Invoke("ThrowObject", i*0.5f+UnityEngine.Random.Range(0,0.3f));
+        }
+
+    }
+
+    private void ThrowObject()
+    {
+        int randIndex = Mathf.RoundToInt(UnityEngine.Random.value*(throwableObjects.Count-1));
+        GameObject throwObj = Instantiate(throwableObjects[randIndex], transform.position, Quaternion.identity);
+
+        Vector3 dirToComedian = (GameObject.Find("Comedian").transform.position - transform.position).normalized;
+
+        throwObj.GetComponent<Rigidbody>().AddForce(dirToComedian*100+Vector3.up*50);
 
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5981556193731571067}
   - component: {fileID: 6676699635532066581}
   - component: {fileID: 4172446145453435144}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Person
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,6 +122,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enjoymentValue: 50
+  throwableObjects:
+  - {fileID: 1095434620383510648, guid: d4007d151be36e24f820e54ef05c89ec, type: 3}
+  - {fileID: 609106652223115222, guid: 16526b719c3217d41956d7a35f29e5d5, type: 3}
   behaviorState: 0
   audienceTags: []
 --- !u!1 &6491062370540412761
@@ -136,7 +139,7 @@ GameObject:
   - component: {fileID: 3801633800498155930}
   - component: {fileID: 2912775500253455975}
   - component: {fileID: 3429815149632037276}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
