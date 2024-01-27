@@ -260,7 +260,7 @@ public class Person : MonoBehaviour
 
     private void PlayAwkwardLaugh()
     {
-        int laughIndex = Mathf.RoundToInt(UnityEngine.Random.value * 4);
+        int laughIndex = Mathf.Clamp(Mathf.RoundToInt(UnityEngine.Random.value * 4), 0, 3);
 
         string path = "event:/Audience/AwkwardLaughing" + "/" + audienceTags[0] + "/" + audienceTags[0] + "_" + audienceTags[1] + "_awkward_" + (laughIndex + 1).ToString();
         FMODUnity.RuntimeManager.PlayOneShot(path, transform.position);
@@ -268,7 +268,7 @@ public class Person : MonoBehaviour
 
     private void PlayHappyLaugh()
     {
-        int laughIndex = Mathf.RoundToInt(UnityEngine.Random.value * 4);
+        int laughIndex = Mathf.Clamp(Mathf.RoundToInt(UnityEngine.Random.value * 4), 0, 3);
 
         string path = "event:/Audience/Laughing" + "/" + audienceTags[0] + "/" + audienceTags[0] + "_" + audienceTags[1] + "_laugh_" + (laughIndex + 1).ToString();
         FMODUnity.RuntimeManager.PlayOneShot(path, transform.position);
@@ -276,7 +276,7 @@ public class Person : MonoBehaviour
 
     private void PlayBooing()
     {
-        int laughIndex = Mathf.RoundToInt(UnityEngine.Random.value * 2);
+        int laughIndex = Mathf.Clamp(Mathf.RoundToInt(UnityEngine.Random.value * 2),0,1);
 
         string path = "event:/Audience/Booing" + "/" + audienceTags[0] + "/" + audienceTags[0] + "_" + audienceTags[1] + "_booing_" + (laughIndex + 1).ToString();
         FMODUnity.RuntimeManager.PlayOneShot(path, transform.position);
@@ -284,7 +284,7 @@ public class Person : MonoBehaviour
 
     private void PlayAngry()
     {
-        int laughIndex = Mathf.RoundToInt(UnityEngine.Random.value * 4);
+        int laughIndex = Mathf.Clamp(Mathf.RoundToInt(UnityEngine.Random.value * 4), 0, 3);
 
         string path = "event:/Audience/Angry" + "/" + audienceTags[0] + "/" + audienceTags[0] + "_" + audienceTags[1] + "_angry_" + (laughIndex + 1).ToString();
         FMODUnity.RuntimeManager.PlayOneShot(path, transform.position);
@@ -292,11 +292,11 @@ public class Person : MonoBehaviour
 
     private void PlayLeaving()
     {
-        int index = Mathf.RoundToInt(UnityEngine.Random.value * 7);
+        int index = Mathf.Clamp(Mathf.RoundToInt(UnityEngine.Random.value * 7), 0, 6);
 
         string path = "event:/Audience/Leaving/ChairMoving"+(index+1).ToString();
         FMODUnity.RuntimeManager.PlayOneShot("event:/Audience/Leaving/ChairMoving_" + (index + 1).ToString(), transform.position);
-        index = Mathf.RoundToInt(UnityEngine.Random.value * 4);
+        index = Mathf.Clamp(Mathf.RoundToInt(UnityEngine.Random.value * 4), 0, 3);
         FMODUnity.RuntimeManager.PlayOneShot("event:/Audience/Leaving/Footsteps_" + (index + 1).ToString(), transform.position);
     }
 
