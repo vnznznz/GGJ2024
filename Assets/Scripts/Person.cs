@@ -5,6 +5,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
+[Serializable]
+public struct NamedImage
+{
+    public string name;
+    public Sprite image;
+}
+
 public class Person : MonoBehaviour
 {
     private Vector3 startPosition;
@@ -51,6 +58,8 @@ public class Person : MonoBehaviour
     public UnityEngine.UI.Image faceImage;
     public string[] audienceTags;
 
+
+    public NamedImage[] audienceHairImages;
     void Start()
     {
         startPosition = transform.position;
@@ -69,8 +78,28 @@ public class Person : MonoBehaviour
         faceImage.sprite = faceNeutral;
 
         emitter = GetComponent<FMODUnity.StudioEventEmitter>();
+
+        var hairId = $"{gender}_{age}";
+
+        foreach (var item in audienceHairImages)
+        {
+            if (item.name == hairId)
+            {
+                transform.Find("Canvas/HairSprite").GetComponent<UnityEngine.UI.Image>().sprite = item.image;
+                break;
+            }
+        }
     }
 
+    public string gender
+    {
+        get { return audienceTags[0]; }
+    }
+
+    public string age
+    {
+        get { return audienceTags[1]; }
+    }
 
     void Update()
     {
@@ -229,7 +258,7 @@ public class Person : MonoBehaviour
 
     private void PlayAwkwardLaugh()
     {
-        int laughIndex = Mathf.RoundToInt(UnityEngine.Random.value*4);
+        int laughIndex = Mathf.RoundToInt(UnityEngine.Random.value * 4);
 
         string path = "event:/Audience/AwkwardLaughing" + "/" + audienceTags[0] + "/" + audienceTags[0] + "_" + audienceTags[1] + "_awkward_" + (laughIndex + 1).ToString();
         FMODUnity.RuntimeManager.PlayOneShot(path, transform.position);

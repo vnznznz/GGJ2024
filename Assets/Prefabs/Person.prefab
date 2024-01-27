@@ -211,6 +211,19 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   faceImage: {fileID: 0}
   audienceTags: []
+  audienceHairImages:
+  - name: male_boomer
+    image: {fileID: 21300000, guid: ed811aff71c4280d1a3bbf2e34a3136a, type: 3}
+  - name: female_boomer
+    image: {fileID: 21300000, guid: f2dae404b798f2be29f1462459f3d207, type: 3}
+  - name: female_genz
+    image: {fileID: 21300000, guid: 0354cff0d560363c4b4eb8e3a189c079, type: 3}
+  - name: male_genz
+    image: {fileID: 21300000, guid: e0a943a7bfa2eb1acb2d770c0ae48433, type: 3}
+  - name: female_millenial
+    image: {fileID: 21300000, guid: 690818474fe2be7da8cba7fd17dc548b, type: 3}
+  - name: male_millenial
+    image: {fileID: 21300000, guid: 9a2980ab05c4a7fce99b106270937f70, type: 3}
 --- !u!114 &1348779886159175262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,7 +424,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9a2980ab05c4a7fce99b106270937f70, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e0a943a7bfa2eb1acb2d770c0ae48433, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
