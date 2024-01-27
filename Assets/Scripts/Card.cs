@@ -44,7 +44,7 @@ public class Card : MonoBehaviour
     {
         text.text = joke.text;
         title.text = joke.title;
-
+        LoadTitleImage();
     }
 
     private void Update()
@@ -79,7 +79,7 @@ public class Card : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void LoadJoke()
+    private void LoadTitleImage()
     {
 
         switch (title.text)
