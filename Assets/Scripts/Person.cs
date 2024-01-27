@@ -244,13 +244,13 @@ public class Person : MonoBehaviour
                 PlayHappyLaugh();
                 break;
             case BehaviorState.Booing:
-                UpdateBooing();
+                PlayBooing();
                 break;
             case BehaviorState.Angry:
-                UpdateAngry();
+                PlayAngry();
                 break;
             case BehaviorState.Leaving:
-                UpdateLeaving();
+                PlayLeaving();
                 break;
 
         }
@@ -281,6 +281,14 @@ public class Person : MonoBehaviour
     }
 
     private void PlayAngry()
+    {
+        int laughIndex = Mathf.RoundToInt(UnityEngine.Random.value * 4);
+
+        string path = "event:/Audience/Angry" + "/" + audienceTags[0] + "/" + audienceTags[0] + "_" + audienceTags[1] + "_angry_" + (laughIndex + 1).ToString();
+        FMODUnity.RuntimeManager.PlayOneShot(path, transform.position);
+    }
+
+    private void PlayLeaving()
     {
         int laughIndex = Mathf.RoundToInt(UnityEngine.Random.value * 4);
 
