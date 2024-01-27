@@ -22,7 +22,6 @@ public class CardManager : MonoBehaviour
 
     private void Update()
     {
-        print(activeCard);
         LoadStartCards();
 
         if (Input.GetKeyDown(KeyCode.L))
@@ -64,6 +63,7 @@ public class CardManager : MonoBehaviour
 
         GameObject newCard = Instantiate(cardPrefab, pos - new Vector3(0, 500, 0), cardPrefab.transform.rotation, this.transform);
         newCard.GetComponent<Card>().cardManager = this;
+        newCard.GetComponent<Card>().index = index;
 
         StartCoroutine(SetNewPos(newCard, pos, scale, startPos, startScale));
         oldCard.UseOldCard();
@@ -77,7 +77,6 @@ public class CardManager : MonoBehaviour
             Card card = child.GetComponent<Card>();
             if (card.index == index)
             {
-                print(card.index);
                 return card;
             }
         }

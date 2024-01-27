@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Card : MonoBehaviour
 {
@@ -15,6 +16,11 @@ public class Card : MonoBehaviour
 
     public int index;
 
+    public TextMeshProUGUI text;
+    public TextMeshProUGUI title;
+
+    private ComedyAction joke;
+
     ComedyActionsLoader comedyActionsLoader;
 
     private void Awake()
@@ -27,6 +33,7 @@ public class Card : MonoBehaviour
     {
         newPos = rectTransform.position;
         newScale = rectTransform.localScale;
+        MakeJoke();
     }
 
     private void Update()
@@ -40,6 +47,7 @@ public class Card : MonoBehaviour
         newPos = rectTransform.position + new Vector3(0, cardManager.selectOffset, 0);
         newScale = rectTransform.localScale + new Vector3(cardManager.sizeIncrease, cardManager.sizeIncrease, 0);
         cardManager.activeCard = index;
+        print(index);
     }
 
     public void OnPointerExitEvent()
@@ -56,8 +64,15 @@ public class Card : MonoBehaviour
 
     public void UseOldCard()
     {
-        GameManager.Instance.TellAJoke(comedyActionsLoader.comedyActions[UnityEngine.Random.Range(0, comedyActionsLoader.comedyActions.Length)]);
+        GameManager.Instance.TellAJoke(joke);
         Destroy(gameObject);
+    }
+
+    private void MakeJoke()
+    {
+        joke = comedyActionsLoader.comedyActions[UnityEngine.Random.Range(0, comedyActionsLoader.comedyActions.Length)];
+        text.text = joke.text;
+        title.text = joke.title;
 
     }
 }
