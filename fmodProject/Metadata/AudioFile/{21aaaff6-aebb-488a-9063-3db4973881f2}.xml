@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{21aaaff6-aebb-488a-9063-3db4973881f2}">
+		<property name="assetPath">
+			<value>Audience/Leaving/Footsteps.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>44.822879818594103</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{4ba1491e-4e70-42d1-ad32-5f83fb10b244}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -290,9 +290,12 @@ public class Person : MonoBehaviour
 
     private void PlayLeaving()
     {
-        int laughIndex = Mathf.RoundToInt(UnityEngine.Random.value * 4);
+        int index = Mathf.RoundToInt(UnityEngine.Random.value * 7);
 
-        string path = "event:/Audience/Laughing" + "/" + audienceTags[0] + "/" + audienceTags[0] + "_" + audienceTags[1] + "_laugh_" + (laughIndex + 1).ToString();
-        FMODUnity.RuntimeManager.PlayOneShot(path, transform.position);
+        string path = "event:/Audience/Leaving/ChairMoving"+(index+1).ToString();
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Audience/Leaving/ChairMoving_" + (index + 1).ToString(), transform.position);
+        index = Mathf.RoundToInt(UnityEngine.Random.value * 4);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Audience/Leaving/Footsteps_" + (index + 1).ToString(), transform.position);
     }
+
 }
