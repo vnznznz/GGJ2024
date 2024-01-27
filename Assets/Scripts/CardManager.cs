@@ -49,9 +49,9 @@ public class CardManager : MonoBehaviour
 
         timeBar.currentValue = selectionAccu / selectionTime;
         audienceBar.currentValue = GameManager.Instance.getAudienceSatisfaction();
-        gameTimeText.text = $"{GameManager.Instance.currentGameTime}";
+        gameTimeText.text = $"Time left: {GameManager.Instance.getTimeLeft():.00}";
 
-        if (transform.GetComponentsInChildren<Card>().Length == 0)
+        if (transform.GetComponentsInChildren<Card>().Length == 0 && GameManager.Instance.gameState == GameManager.GameState.Round)
         {
             LoadCards();
         }
