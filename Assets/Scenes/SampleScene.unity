@@ -6536,7 +6536,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &895632201
 Transform:
   m_ObjectHideFlags: 0
@@ -16481,7 +16481,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 16795880008028533, guid: e32e19852a2938a35bd679442a347f41, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3260851347097212017, guid: e32e19852a2938a35bd679442a347f41, type: 3}
       propertyPath: m_fontAsset
