@@ -16,6 +16,7 @@ public class MainMenuGUI : MonoBehaviour
 
     public GameObject menuCanvas;
     public GameObject tutorialCanvas;
+    public GameObject creditsCanvas;
 
     public List<GameObject> tutorialPages;
 
@@ -36,6 +37,7 @@ public class MainMenuGUI : MonoBehaviour
         camTut2.SetActive(false);
 
         tutorialCanvas.SetActive(false);
+        creditsCanvas.SetActive(false);
         ResetTutorialPages();
     }
 
@@ -81,6 +83,13 @@ public class MainMenuGUI : MonoBehaviour
     {
         tutorialCanvas.SetActive(false);
         menuCanvas.SetActive(true);
+    }
+
+    public void OpenCredits()
+    {
+        tutorialCanvas.SetActive(false);
+        menuCanvas.SetActive(false);
+        creditsCanvas.SetActive(true);
     }
 
     void RemovePeople()
