@@ -157,7 +157,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        switch(gameState)
+        switch (gameState)
         {
             case GameState.Menu:
                 break;
@@ -167,7 +167,7 @@ public class GameManager : MonoBehaviour
             case GameState.GameOver:
                 break;
         }
-        
+
     }
 
 
@@ -233,7 +233,7 @@ public class GameManager : MonoBehaviour
     {
         foreach (Person person in audience)
         {
-            person.ForceEnjoymentUponThee(-5, true);
+            person.ForceEnjoymentUponThee(-10, true);
         }
 
         PlayAwkwardSilence();
@@ -269,7 +269,7 @@ public class GameManager : MonoBehaviour
         foreach (var item in enjoymentValues.Keys)
         {
             // TODO:  notify person about enjoyment value change so it can display an emoji
-            item.ForceEnjoymentUponThee(enjoymentValues[item], false);
+            item.ForceEnjoymentUponThee(enjoymentValues[item] + UnityEngine.Random.Range(-5, 5), false);
             Debug.Log($"{item.audienceTags[0]}, {item.audienceTags[1]}: {enjoymentValues[item]}");
         }
 
@@ -345,7 +345,7 @@ public class GameManager : MonoBehaviour
         menuCamera.SetActive(false);
         mainMenu.SetActive(false);
 
-        Invoke("StartNewRound",2);
+        Invoke("StartNewRound", 2);
     }
 
     public void StartNewRound()
