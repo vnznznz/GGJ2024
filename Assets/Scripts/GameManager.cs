@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
     public float currentGameTime = 0;
     private float startTime;
 
+    public float jokeIntensityModifier = 1.5f;
+    public float negativeIntensityModifier = 2f;
 
     [FMODUnity.BankRef]
     public List<string> Banks;
@@ -208,17 +210,17 @@ public class GameManager : MonoBehaviour
             "Failed Show!",
             $"{leaverCount} guests left the show. Maybe try to be funny next time?");
         }
-        else if (satisfaction <= 0.3)
+        else if (satisfaction <= 0.2)
         {
             gameOverGui.UpdateText(
             "Horrible Show!",
             $"Only {remainingAudience} of {audience.Count} guests stayed until the end.");
         }
-        else if (satisfaction <= 0.6)
+        else if (satisfaction <= 0.8)
         {
             gameOverGui.UpdateText(
             "Good Show!",
-            $"Only {leaverCount} of {audience.Count} guests left. The rest had (mostly) a good time.");
+            $"Only {leaverCount} of {audience.Count} guests left. The rest had a (mostly) good time.");
         }
         else
         {
@@ -273,8 +275,8 @@ public class GameManager : MonoBehaviour
             GameObject newPerson = Instantiate(PersonPrefab, chair.transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
             var person = newPerson.GetComponent<Person>();
             person.audienceTags = new string[2];
-            person.audienceTags[1] = ageTags[(int)(index%3)];
-            person.audienceTags[0] = genderTags[(int)(index/3f)];
+            person.audienceTags[1] = ageTags[(int)(index % 3)];
+            person.audienceTags[0] = genderTags[(int)(index / 3f)];
             index++;
             tutorialPeople.Add(newPerson.GetComponent<Person>());
         }
@@ -282,7 +284,7 @@ public class GameManager : MonoBehaviour
 
     public void RemoveTutorialPeople()
     {
-        foreach(Person person in tutorialPeople)
+        foreach (Person person in tutorialPeople)
         {
             Destroy(person.gameObject);
         }
@@ -297,7 +299,7 @@ public class GameManager : MonoBehaviour
     {
         foreach (Person person in audience)
         {
-            person.ForceEnjoymentUponThee(-10, true);
+            person.ForceEnjoymentUponThee(-15, true);
         }
 
         PlayAwkwardSilence();
@@ -333,7 +335,15 @@ public class GameManager : MonoBehaviour
         foreach (var item in enjoymentValues.Keys)
         {
             // TODO:  notify person about enjoyment value change so it can display an emoji
-            item.ForceEnjoymentUponThee(enjoymentValues[item] + UnityEngine.Random.Range(-5, 5), false);
+            var enj = enjoymentValues[item];
+
+            if (enj < 0)
+            {
+                enj *= negativeIntensityModifier;
+            }
+
+            enj = enj * jokeIntensityModifier + UnityEngine.Random.Range(-5, 5);
+            item.ForceEnjoymentUponThee(enj, false);
             Debug.Log($"{item.audienceTags[0]}, {item.audienceTags[1]}: {enjoymentValues[item]}");
         }
 
@@ -353,18 +363,35 @@ public class GameManager : MonoBehaviour
     }
     public float getAudienceSatisfaction()
     {
+
+        // audience satisfaction goes from 0-1
+        // it consists of two equally weighted parts
+        // how many guests left until only half of the audience
+        // total current enjoyment value of each guest left in the audience / total possibe enjoyment value
+
+        // if audience satisfaction goes under 0.3 you lose
+
         float sumEnjoyment = 0f;
 
+        var angryGuests = getDissatisfiedAudienceCountCalculationRoutine();
+        var halfAudienceCount = audience.Count / 2;
+        var leftOverAudience = audience.Count - angryGuests;
+        var guestsLeftUntilHalf = Math.Clamp(halfAudienceCount - angryGuests, 0, halfAudienceCount);
+        var guestsLeftScore = (guestsLeftUntilHalf / (float)halfAudienceCount);
         foreach (var item in audience)
         {
             if (item.enjoymentValue > 0f)
-            { sumEnjoyment += 1f; }
+            { sumEnjoyment += item.getUnitEnjoymentVector1D(); }
         }
 
+        var totalSatisfaction = (guestsLeftScore + (sumEnjoyment / leftOverAudience)) / 2f;
         //sumEnjoyment /= audience.Count / 2;
         // audienceSatisfaction = 0f - 1f
         // go to 0 when half of the audience has left
-        return (sumEnjoyment - audience.Count / 2) / (audience.Count / 2);
+
+        var loseThreshold = 0.3f;
+
+        return (totalSatisfaction - loseThreshold) / (1 - loseThreshold);
 
     }
 
