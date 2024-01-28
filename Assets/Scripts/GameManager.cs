@@ -206,28 +206,32 @@ public class GameManager : MonoBehaviour
 
         if (satisfaction <= 0.01)
         {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/GameOver/GameOver_very_pleased", transform.position);
+            Debug.Log("Play horrible");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/GameOver/GameOver_horrible", transform.position);
             gameOverGui.UpdateText(
             "Failed Show!",
             $"{leaverCount} guests left the show. Maybe try to be funny next time?");
         }
         else if (satisfaction <= 0.2)
         {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/GameOver/GameOver_pleased", transform.position);
+            Debug.Log("Play bad");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/GameOver/GameOver_bad", transform.position);
             gameOverGui.UpdateText(
             "Horrible Show!",
             $"Only {remainingAudience} of {audience.Count} guests stayed until the end.");
         }
         else if (satisfaction <= 0.8)
         {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/GameOver/GameOver_bad", transform.position);
+            Debug.Log("Play good");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/GameOver/GameOver_pleased", transform.position);
             gameOverGui.UpdateText(
             "Good Show!",
             $"Only {leaverCount} of {audience.Count} guests left. The rest had a (mostly) good time.");
         }
         else
         {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/GameOver/GameOver_horrible", transform.position);
+            Debug.Log("Play very good");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/GameOver/GameOver_very_pleased", transform.position);
             gameOverGui.UpdateText(
             "Successful Show!",
             $"About {UnityEngine.Random.Range(1, 5)} people wet their pants laughing. Only {this.getDissatisfiedAudienceCountCalculationRoutine()} of {this.audience.Count} guests left. ");
