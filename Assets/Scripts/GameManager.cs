@@ -184,6 +184,10 @@ public class GameManager : MonoBehaviour
             GameOver();
             //TellAJoke(comedyActionsLoader.comedyActions[UnityEngine.Random.Range(0, comedyActionsLoader.comedyActions.Length)]);
         }
+        if (getAudienceSatisfaction() <= 0.01)
+        {
+            GameOver();
+        }
     }
 
 
@@ -192,9 +196,35 @@ public class GameManager : MonoBehaviour
         gameState = GameState.GameOver;
         cardManager.gameObject.SetActive(false);
         var gameOverGui = FindFirstObjectByType<GameEndingGui>(FindObjectsInactive.Include);
-        gameOverGui.UpdateText(
+        var satisfaction = getAudienceSatisfaction();
+        var leaverCount = getDissatisfiedAudienceCountCalculationRoutine();
+        var remainingAudience = audience.Count - leaverCount;
+
+        if (satisfaction <= 0.01)
+        {
+            gameOverGui.UpdateText(
+            "Failed Show!",
+            $"{leaverCount} guests left the show. Maybe try to be funny next time?");
+        }
+        else if (satisfaction <= 0.3)
+        {
+            gameOverGui.UpdateText(
+            "Horrible Show!",
+            $"Only {remainingAudience} of {audience.Count} guests stayed until the end.");
+        }
+        else if (satisfaction <= 0.6)
+        {
+            gameOverGui.UpdateText(
+            "Good Show!",
+            $"Only {leaverCount} of {audience.Count} guests left. The rest had (mostly) a good time.");
+        }
+        else
+        {
+            gameOverGui.UpdateText(
             "Successful Show!",
-            $"Only {this.getDissatisfiedAudienceCountCalculationRoutine()} of {this.audience.Count} guests left the show.");
+            $"About {UnityEngine.Random.Range(1, 5)} people wet their pants laughing. Only {this.getDissatisfiedAudienceCountCalculationRoutine()} of {this.audience.Count} guests left. ");
+        }
+
         gameOverGui.gameObject.SetActive(true);
     }
     public void RestartGame()
@@ -297,14 +327,16 @@ public class GameManager : MonoBehaviour
             { sumEnjoyment += 1f; }
         }
 
-        sumEnjoyment /= audience.Count;
-
-        return sumEnjoyment;
+        //sumEnjoyment /= audience.Count / 2;
+        // audienceSatisfaction = 0f - 1f
+        // go to 0 when half of the audience has left
+        return (sumEnjoyment - audience.Count / 2) / (audience.Count / 2);
 
     }
 
     public void StartRound()
     {
+
         gameState = GameState.Round;
 
         // Generate random set of cards
