@@ -100,6 +100,8 @@ public class Person : MonoBehaviour
 
         emitter = GetComponent<FMODUnity.StudioEventEmitter>();
 
+        enjoymentValue = 50 + UnityEngine.Random.Range(-5,15);
+
         var hairId = $"{gender}_{age}";
 
         foreach (var item in audienceHairImages)
@@ -249,7 +251,7 @@ public class Person : MonoBehaviour
         else if (enjoymentValue >= 0.1) behaviorState = BehaviorState.Angry;
         else behaviorState = BehaviorState.Leaving;
 
-        if (enjoymentValue > 10 && enjoymentValue < 40)
+        if (enjoymentValue < 20 && UnityEngine.Random.Range(0,10)<3)
         {
             ThrowAtComedian();
         }
