@@ -29,11 +29,16 @@ public class CardManager : MonoBehaviour
     public float pauseTime = 3;
     public float selectionTime = 3;
     private float selectionAccu = 0;
+
+    private bool cardsBlocked = false;
     private void Start()
     {
         timeBar = transform.Find("TimebarBar").GetComponent<Bar>();
         audienceBar = transform.Find("AudienceBar").GetComponent<Bar>();
         gameTimeText = transform.Find("TimeLeft").GetComponent<TextMeshProUGUI>();
+
+        cardsBlocked = true;
+        Invoke("LoadCards", 3);
     }
     private void Update()
     {
@@ -45,15 +50,22 @@ public class CardManager : MonoBehaviour
             selectionAccu = 0;
             GameManager.Instance.MissJoke();
             ClearCards();
+            cardsBlocked = true;
+            Invoke("LoadCards", pauseTime);
+        }
+
+        if (cardsBlocked)
+        {
+            selectionAccu = 0;
         }
 
         timeBar.currentValue = selectionAccu / selectionTime;
         audienceBar.currentValue = GameManager.Instance.getAudienceSatisfaction();
-        gameTimeText.text = $"Time left: {GameManager.Instance.getTimeLeft():.00}";
+        gameTimeText.text = $"Time left:\n {GameManager.Instance.getTimeLeft():.00}";
 
         if (transform.GetComponentsInChildren<Card>().Length == 0 && GameManager.Instance.gameState == GameManager.GameState.Round)
         {
-            LoadCards();
+            //LoadCards();
         }
 
 
@@ -93,7 +105,7 @@ public class CardManager : MonoBehaviour
             card.joke = jokes[i];
             xPos += xPadding;
         }
-
+        cardsBlocked = false;
     }
 
     public void TriggerCardActivation(Card card)
@@ -101,8 +113,8 @@ public class CardManager : MonoBehaviour
 
         GameManager.Instance.TellAJoke(card.joke);
         ClearCards();
-        LoadCards();
-
+        cardsBlocked = true;
+        Invoke("LoadCards", pauseTime);
     }
 
     public void LoadNewCard(int index)

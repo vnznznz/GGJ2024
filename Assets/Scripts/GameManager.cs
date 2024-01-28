@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
             SceneManager.activeSceneChanged -= ChangedActiveScene;
             SceneManager.activeSceneChanged += ChangedActiveScene;
 
-            //StartCoroutine(LoadGameAsync());
+
         }
 
     }
@@ -151,7 +151,9 @@ public class GameManager : MonoBehaviour
         menuCamera.SetActive(true);
         gameCamera.SetActive(false);
         mainMenu.SetActive(true);
+
     }
+
 
 
     void Update()
@@ -253,6 +255,38 @@ public class GameManager : MonoBehaviour
             person.audienceTags[0] = genderTags[UnityEngine.Random.Range(0, genderTags.Length)];
             audience.Add(newPerson.GetComponent<Person>());
         }
+    }
+
+    private List<Person> tutorialPeople;
+
+    public void SpawnTutorialPeople()
+    {
+        GameObject[] chairs = GameObject.FindGameObjectsWithTag("Chair");
+        tutorialPeople = new List<Person>();
+
+        string[] ageTags = { "boomer", "millenial", "genz" };
+        string[] genderTags = { "male", "female" };
+        int index = 0;
+        foreach (GameObject chair in chairs)
+        {
+            if (chair.layer != 10) continue;
+            GameObject newPerson = Instantiate(PersonPrefab, chair.transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+            var person = newPerson.GetComponent<Person>();
+            person.audienceTags = new string[2];
+            person.audienceTags[1] = ageTags[(int)(index%3)];
+            person.audienceTags[0] = genderTags[(int)(index/3f)];
+            index++;
+            tutorialPeople.Add(newPerson.GetComponent<Person>());
+        }
+    }
+
+    public void RemoveTutorialPeople()
+    {
+        foreach(Person person in tutorialPeople)
+        {
+            Destroy(person.gameObject);
+        }
+        tutorialPeople.Clear();
     }
 
     public float getTimeLeft()

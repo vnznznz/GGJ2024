@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Chair
   - Despawn
+  - TutorialChair
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - Throwable
   - Post
   - Despawn
-  - 
+  - TutorialChair
   - 
   - 
   - 

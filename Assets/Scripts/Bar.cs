@@ -9,8 +9,7 @@ public class Bar : MonoBehaviour
     public float maxHeight = 512;
     public float currentValue = 0;
 
-    public Color minColor = Color.white;
-    public Color maxColor = Color.red;
+    public Gradient gradient;
 
     private RectTransform rectTransform;
     private UnityEngine.UI.Image image;
@@ -26,6 +25,6 @@ public class Bar : MonoBehaviour
     {
         rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, currentValue * maxHeight);
 
-        this.image.color = Color.Lerp(minColor, maxColor, currentValue);
+        this.image.color = gradient.Evaluate(currentValue);
     }
 }

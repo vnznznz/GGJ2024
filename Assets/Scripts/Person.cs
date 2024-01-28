@@ -38,6 +38,14 @@ public class Person : MonoBehaviour
 
     private FMODUnity.StudioEventEmitter emitter;
 
+    public List<Color> tshirtColorList = new List<Color>();
+    public List<Color> suitColorList = new List<Color>();
+    public List<Color> dressColorList = new List<Color>();
+
+    public MeshRenderer tshirtRef;
+    public MeshRenderer suitRef;
+    public MeshRenderer dressRef;
+
     public enum BehaviorState
     {
         Neutral,
@@ -53,6 +61,9 @@ public class Person : MonoBehaviour
     public Sprite faceAngry;
     public Sprite faceLeaving;
     public BehaviorState behaviorState = BehaviorState.Neutral;
+
+    public Gradient colorGradient;
+
 
     public Camera mainCamera;
     public UnityEngine.UI.Image faceImage;
@@ -89,6 +100,8 @@ public class Person : MonoBehaviour
 
         emitter = GetComponent<FMODUnity.StudioEventEmitter>();
 
+        enjoymentValue = 50 + UnityEngine.Random.Range(-5,15);
+
         var hairId = $"{gender}_{age}";
 
         foreach (var item in audienceHairImages)
@@ -104,6 +117,47 @@ public class Person : MonoBehaviour
         {
             reactionImages[item.name] = item.image;
         }
+
+        ResetClothes();
+
+        if (audienceTags[0] == "male")
+        {
+            if (audienceTags[1] == "genz")
+            {
+                int index = Mathf.RoundToInt(UnityEngine.Random.value * (tshirtColorList.Count - 1));
+                tshirtRef.material.SetColor("_Color", tshirtColorList[index]);
+                tshirtRef.gameObject.SetActive(true);
+            }
+            else
+            {
+                int index = Mathf.RoundToInt(UnityEngine.Random.value * (suitColorList.Count - 1));
+                suitRef.material.SetColor("_Color", suitColorList[index]);
+                suitRef.gameObject.SetActive(true);
+            }
+        }
+        else
+        {
+            if (audienceTags[1] == "genz")
+            {
+                int index = Mathf.RoundToInt(UnityEngine.Random.value * (tshirtColorList.Count - 1));
+                tshirtRef.material.SetColor("_Color", tshirtColorList[index]);
+                tshirtRef.gameObject.SetActive(true);
+            }
+            else
+            {
+                int index = Mathf.RoundToInt(UnityEngine.Random.value * (dressColorList.Count - 1));
+                dressRef.material.SetColor("_Color", dressColorList[index]);
+                dressRef.gameObject.SetActive(true);
+            }
+        }
+
+    }
+
+    public void ResetClothes()
+    {
+        tshirtRef.gameObject.SetActive (false);
+        suitRef.gameObject.SetActive (false);
+        dressRef.gameObject.SetActive (false);
     }
 
     public string gender
@@ -123,7 +177,7 @@ public class Person : MonoBehaviour
 
         float enj = 1f - (Math.Clamp(this.enjoymentValue, 1, 100) / 100f);
         var col = Color.Lerp(new Color(1, 0.859f, 0.06f), Color.red, enj);
-        meshRenderer.material.SetColor("_Color", col);
+        meshRenderer.material.SetColor("_Color", colorGradient.Evaluate(enj));
 
         transform.LookAt(mainCamera.transform);
 
@@ -197,7 +251,7 @@ public class Person : MonoBehaviour
         else if (enjoymentValue >= 0.1) behaviorState = BehaviorState.Angry;
         else behaviorState = BehaviorState.Leaving;
 
-        if (enjoymentValue > 10 && enjoymentValue < 40)
+        if (enjoymentValue < 20 && UnityEngine.Random.Range(0,10)<3)
         {
             ThrowAtComedian();
         }
