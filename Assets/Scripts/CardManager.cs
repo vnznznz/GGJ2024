@@ -26,6 +26,18 @@ public class CardManager : MonoBehaviour
     private Bar audienceBar;
 
     private TextMeshProUGUI gameTimeText;
+    private TextMeshProUGUI jokeLoadingText;
+
+    private string currentJokeLoadingText = "";
+    private string[] jokeLoadingTexts = {
+        "Channeling the power of the elder comedy lords",
+        "Desperately searching for a funny anecodote",
+        "Loading joke.exe",
+        "Downlading more jokes from the internet",
+        "Searching for jokes on the blockchain",
+        "Thinking",
+        "Pondering",
+    };
     public float pauseTime = 1;
     public float selectionTime = 2.5f;
     private float selectionAccu = 0;
@@ -36,8 +48,10 @@ public class CardManager : MonoBehaviour
         timeBar = transform.Find("TimebarBar").GetComponent<Bar>();
         audienceBar = transform.Find("AudienceBar").GetComponent<Bar>();
         gameTimeText = transform.Find("TimeLeft").GetComponent<TextMeshProUGUI>();
+        jokeLoadingText = transform.Find("JokeLoading").GetComponent<TextMeshProUGUI>();
 
         cardsBlocked = true;
+        currentJokeLoadingText = jokeLoadingTexts[UnityEngine.Random.Range(0, jokeLoadingTexts.Length)];
         Invoke("LoadCards", 3);
     }
     private void Update()
@@ -57,6 +71,16 @@ public class CardManager : MonoBehaviour
         if (cardsBlocked)
         {
             selectionAccu = 0;
+            var dotCount = ((Time.frameCount % 30) + 1) / 10;
+            var updatedText = currentJokeLoadingText;
+
+            for (int i = 0; i < dotCount; i++)
+            {
+                updatedText += ".";
+            }
+
+            jokeLoadingText.text = updatedText;
+
         }
 
         timeBar.currentValue = selectionAccu / selectionTime;
@@ -77,6 +101,7 @@ public class CardManager : MonoBehaviour
 
     private void ClearCards()
     {
+        currentJokeLoadingText = jokeLoadingTexts[UnityEngine.Random.Range(0, jokeLoadingTexts.Length)];
         foreach (var card in transform.GetComponentsInChildren<Card>())
         {
             Destroy(card.gameObject);
@@ -84,6 +109,7 @@ public class CardManager : MonoBehaviour
     }
     private void LoadCards()
     {
+        jokeLoadingText.text = "";
         selectionAccu = 0;
         float xPos = -xPadding;
         var jokes = GameManager.Instance.comedyActionsLoader.GetRandomComedyActions((uint)Mathf.FloorToInt(maxCards));
