@@ -221,12 +221,12 @@ public class Person : MonoBehaviour
             // happy icon
             reactionImage.sprite = reactionImages["happy"];
         }
-        else if (enjoymentDelta > 5 && enjoymentDelta < 10)
+        else if (enjoymentDelta > 0 && enjoymentDelta < 10)
         {
             // mild happy icon
             reactionImage.sprite = reactionImages["mildhappy"];
         }
-        else if (enjoymentDelta < -5 && enjoymentDelta > -10)
+        else if (enjoymentDelta < 0 && enjoymentDelta > -10)
         {
             // mild unhappy icon
             reactionImage.sprite = reactionImages["mildunhappy"];

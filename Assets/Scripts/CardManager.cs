@@ -56,7 +56,7 @@ public class CardManager : MonoBehaviour
     }
     private void Update()
     {
-        
+
         selectionAccu += Time.deltaTime;
 
         if (selectionAccu > selectionTime)
@@ -129,6 +129,7 @@ public class CardManager : MonoBehaviour
             card.newScale = rectTransform.localScale;
             card.index = i;
             card.joke = jokes[i];
+            card.SetIcons();
             xPos += xPadding;
         }
         cardsBlocked = false;
