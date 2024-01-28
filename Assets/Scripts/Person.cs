@@ -100,7 +100,7 @@ public class Person : MonoBehaviour
 
         emitter = GetComponent<FMODUnity.StudioEventEmitter>();
 
-        enjoymentValue = 50 + UnityEngine.Random.Range(-5,15);
+        enjoymentValue = 70 + UnityEngine.Random.Range(-10, 5);
 
         var hairId = $"{gender}_{age}";
 
@@ -155,9 +155,9 @@ public class Person : MonoBehaviour
 
     public void ResetClothes()
     {
-        tshirtRef.gameObject.SetActive (false);
-        suitRef.gameObject.SetActive (false);
-        dressRef.gameObject.SetActive (false);
+        tshirtRef.gameObject.SetActive(false);
+        suitRef.gameObject.SetActive(false);
+        dressRef.gameObject.SetActive(false);
     }
 
     public string gender
@@ -170,6 +170,10 @@ public class Person : MonoBehaviour
         get { return audienceTags[1]; }
     }
 
+    public float getUnitEnjoymentVector1D()
+    {
+        return (Math.Clamp(this.enjoymentValue, 1, 100) / 100f);
+    }
     void Update()
     {
         UpdateBehavior();
@@ -251,7 +255,7 @@ public class Person : MonoBehaviour
         else if (enjoymentValue >= 0.1) behaviorState = BehaviorState.Angry;
         else behaviorState = BehaviorState.Leaving;
 
-        if (enjoymentValue < 20 && UnityEngine.Random.Range(0,10)<3)
+        if (enjoymentValue < 20 && UnityEngine.Random.Range(0, 10) < 3)
         {
             ThrowAtComedian();
         }
@@ -443,7 +447,7 @@ public class Person : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Despawn")
+        if (other.tag == "Despawn")
         {
             Despawn();
         }

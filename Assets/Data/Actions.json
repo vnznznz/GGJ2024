@@ -22,7 +22,7 @@
                 },
                 {
                     "audience": "genz",
-                    "value": -16
+                    "value": -14
                 }
             ]
         },
@@ -48,7 +48,7 @@
                 },
                 {
                     "audience": "genz",
-                    "value": -16
+                    "value": -14
                 }
             ]
         },
@@ -74,7 +74,7 @@
                 },
                 {
                     "audience": "genz",
-                    "value": -16
+                    "value": -12
                 }
             ]
         },
@@ -166,7 +166,7 @@
                 },
                 {
                     "audience": "genz",
-                    "value": 15
+                    "value": 20
                 }
             ]
         },
@@ -325,6 +325,202 @@
                 {
                     "audience": "genz",
                     "value": -5
+                }
+            ]
+        },
+        {
+            "title": "Slapstick",
+            "text": "Pretend to climb and invisible tree and fall.",
+            "result": [
+                {
+                    "audience": "male",
+                    "value": 10
+                },
+                {
+                    "audience": "female",
+                    "value": 0
+                },
+                {
+                    "audience": "boomer",
+                    "value": 5
+                },
+                {
+                    "audience": "millenial",
+                    "value": 5
+                },
+                {
+                    "audience": "genz",
+                    "value": -5
+                }
+            ]
+        },
+        {
+            "title": "Slapstick",
+            "text": "Try to copy Michael Jackson dance moves.",
+            "result": [
+                {
+                    "audience": "male",
+                    "value": 10
+                },
+                {
+                    "audience": "female",
+                    "value": 0
+                },
+                {
+                    "audience": "boomer",
+                    "value": 5
+                },
+                {
+                    "audience": "millenial",
+                    "value": 5
+                },
+                {
+                    "audience": "genz",
+                    "value": -5
+                }
+            ]
+        },
+        {
+            "title": "Blonde",
+            "text": "Pretend to climb and invisible tree and fall.",
+            "result": [
+                {
+                    "audience": "male",
+                    "value": 10
+                },
+                {
+                    "audience": "female",
+                    "value": -10
+                },
+                {
+                    "audience": "boomer",
+                    "value": 8
+                },
+                {
+                    "audience": "millenial",
+                    "value": 6
+                },
+                {
+                    "audience": "genz",
+                    "value": -10
+                }
+            ]
+        },
+        {
+            "title": "Blonde",
+            "text": "Tell a joke about a blonde women failing to use a calculator.",
+            "result": [
+                {
+                    "audience": "male",
+                    "value": 15
+                },
+                {
+                    "audience": "boomer",
+                    "value": 10
+                },
+                {
+                    "audience": "female",
+                    "value": -8
+                },
+                {
+                    "audience": "millenial",
+                    "value": 2
+                },
+                {
+                    "audience": "genz",
+                    "value": -16
+                }
+            ]
+        },
+        {
+            "title": "Story",
+            "text": "Tell a short story about a cat and a mouse becoming best friends.",
+            "result": [
+                {
+                    "audience": "boomer",
+                    "value": 15
+                },
+                {
+                    "audience": "millenial",
+                    "value": 0
+                },
+                {
+                    "audience": "genz",
+                    "value": -15
+                }
+            ]
+        },
+        {
+            "title": "Story",
+            "text": "Tell a scary story about the monster living under your bed.",
+            "result": [
+                {
+                    "audience": "male",
+                    "value": 5
+                },
+                {
+                    "audience": "boomer",
+                    "value": 5
+                },
+                {
+                    "audience": "female",
+                    "value": -5
+                },
+                {
+                    "audience": "millenial",
+                    "value": 5
+                },
+                {
+                    "audience": "genz",
+                    "value": -10
+                }
+            ]
+        },
+        {
+            "title": "Story",
+            "text": "Tell a funny story about your latest romance.",
+            "result": [
+                {
+                    "audience": "boomer",
+                    "value": 15
+                },
+                {
+                    "audience": "female",
+                    "value": 10
+                },
+                {
+                    "audience": "millenial",
+                    "value": 0
+                },
+                {
+                    "audience": "genz",
+                    "value": -10
+                }
+            ]
+        },
+        {
+            "title": "Story",
+            "text": "Tell a funny story about the good old times.",
+            "result": [
+                {
+                    "audience": "male",
+                    "value": 5
+                },
+                {
+                    "audience": "boomer",
+                    "value": 15
+                },
+                {
+                    "audience": "female",
+                    "value": -5
+                },
+                {
+                    "audience": "millenial",
+                    "value": 5
+                },
+                {
+                    "audience": "genz",
+                    "value": -10
                 }
             ]
         }
