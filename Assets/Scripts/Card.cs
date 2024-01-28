@@ -100,7 +100,7 @@ public class Card : MonoBehaviour
                 image.sprite = slapstickImage;
                 break;
 
-            case "Wordplay":
+            case "Story":
                 image.sprite = lastImage;
                 break;
         }
