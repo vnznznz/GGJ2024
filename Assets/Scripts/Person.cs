@@ -129,7 +129,7 @@ public class Person : MonoBehaviour
             else
             {
                 int index = Mathf.RoundToInt(UnityEngine.Random.value * (suitColorList.Count - 1));
-                suitRef.material.SetColor("_Color", tshirtColorList[index]);
+                suitRef.material.SetColor("_Color", suitColorList[index]);
                 suitRef.gameObject.SetActive(true);
             }
         }
@@ -144,7 +144,7 @@ public class Person : MonoBehaviour
             else
             {
                 int index = Mathf.RoundToInt(UnityEngine.Random.value * (dressColorList.Count - 1));
-                dressRef.material.SetColor("_Color", tshirtColorList[index]);
+                dressRef.material.SetColor("_Color", dressColorList[index]);
                 dressRef.gameObject.SetActive(true);
             }
         }
