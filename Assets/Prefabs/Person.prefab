@@ -279,6 +279,7 @@ MonoBehaviour:
   throwableObjects:
   - {fileID: 1095434620383510648, guid: d4007d151be36e24f820e54ef05c89ec, type: 3}
   - {fileID: 609106652223115222, guid: 16526b719c3217d41956d7a35f29e5d5, type: 3}
+  - {fileID: 576908232221589508, guid: 0fa0a6b3812bc8b419299ef873eca947, type: 3}
   faceNeutral: {fileID: 21300000, guid: ca24a7f31a3b40a4dbff865d94950d16, type: 3}
   faceHappy: {fileID: 21300000, guid: 747286cafdc9f0462875cae05d7484d4, type: 3}
   faceBooing: {fileID: 21300000, guid: c115583fe929d5f07841cc190f8c04ac, type: 3}
