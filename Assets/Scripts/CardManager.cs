@@ -26,8 +26,8 @@ public class CardManager : MonoBehaviour
     private Bar audienceBar;
 
     private TextMeshProUGUI gameTimeText;
-    public float pauseTime = 3;
-    public float selectionTime = 3;
+    public float pauseTime = 1;
+    public float selectionTime = 2.5f;
     private float selectionAccu = 0;
 
     private bool cardsBlocked = false;
