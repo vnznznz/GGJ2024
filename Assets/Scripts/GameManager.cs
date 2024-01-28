@@ -157,7 +157,22 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
+        switch(gameState)
+        {
+            case GameState.Menu:
+                break;
+            case GameState.Round:
+                UpdateGame();
+                break;
+            case GameState.GameOver:
+                break;
+        }
+        
+    }
 
+
+    private void UpdateGame()
+    {
         currentGameTime += Time.deltaTime;
 
         if (getTimeLeft() <= 0)
@@ -170,6 +185,7 @@ public class GameManager : MonoBehaviour
             //TellAJoke(comedyActionsLoader.comedyActions[UnityEngine.Random.Range(0, comedyActionsLoader.comedyActions.Length)]);
         }
     }
+
 
     public void GameOver()
     {
