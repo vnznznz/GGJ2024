@@ -381,4 +381,18 @@ public class Person : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot("event:/Audience/Leaving/Footsteps_" + (index + 1).ToString(), transform.position);
     }
 
+    public void Despawn()
+    {
+        CancelInvoke("ThrowObject");
+        gameObject.SetActive(false);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Despawn")
+        {
+            Despawn();
+        }
+    }
+
 }

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Chair
+  - Despawn
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - Audience
   - Throwable
   - Post
-  - 
+  - Despawn
   - 
   - 
   - 
