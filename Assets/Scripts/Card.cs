@@ -127,19 +127,19 @@ public class Card : MonoBehaviour
 
                     if (UnityEngine.Random.Range(0f, 1f) > 0.5f)
                     {
-                        currentIcon.color = Color.white;
+
                         currentIcon.sprite = iconImages[audience];
                         remaingTips -= 1;
                     }
                     else
                     {
 
-                        currentIcon.sprite = null;
+
                     }
                 }
                 else
                 {
-                    currentIcon.sprite = null;
+
 
                 }
 
