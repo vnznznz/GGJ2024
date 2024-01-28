@@ -301,6 +301,10 @@ public class GameManager : MonoBehaviour
     }
     public void MissJoke()
     {
+        if (gameState != GameState.Round)
+        {
+            return;
+        }
         foreach (Person person in audience)
         {
             person.ForceEnjoymentUponThee(-15, true);

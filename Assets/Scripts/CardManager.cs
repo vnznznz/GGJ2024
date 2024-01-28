@@ -56,7 +56,7 @@ public class CardManager : MonoBehaviour
     }
     private void Update()
     {
-
+        
         selectionAccu += Time.deltaTime;
 
         if (selectionAccu > selectionTime)
