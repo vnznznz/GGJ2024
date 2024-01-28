@@ -382,32 +382,6 @@
         },
         {
             "title": "Blonde",
-            "text": "Pretend to climb and invisible tree and fall.",
-            "result": [
-                {
-                    "audience": "male",
-                    "value": 10
-                },
-                {
-                    "audience": "female",
-                    "value": -10
-                },
-                {
-                    "audience": "boomer",
-                    "value": 8
-                },
-                {
-                    "audience": "millenial",
-                    "value": 6
-                },
-                {
-                    "audience": "genz",
-                    "value": -10
-                }
-            ]
-        },
-        {
-            "title": "Blonde",
             "text": "Tell a joke about a blonde women failing to use a calculator.",
             "result": [
                 {
