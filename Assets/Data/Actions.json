@@ -6,11 +6,11 @@
             "result": [
                 {
                     "audience": "male",
-                    "value": 15
+                    "value": 8
                 },
                 {
                     "audience": "boomer",
-                    "value": 10
+                    "value": 7
                 },
                 {
                     "audience": "female",
@@ -22,7 +22,7 @@
                 },
                 {
                     "audience": "genz",
-                    "value": -14
+                    "value": -11
                 }
             ]
         },
@@ -32,11 +32,11 @@
             "result": [
                 {
                     "audience": "male",
-                    "value": 15
+                    "value": 8
                 },
                 {
                     "audience": "boomer",
-                    "value": 10
+                    "value": 7
                 },
                 {
                     "audience": "female",
@@ -48,7 +48,7 @@
                 },
                 {
                     "audience": "genz",
-                    "value": -14
+                    "value": -11
                 }
             ]
         },
@@ -58,11 +58,11 @@
             "result": [
                 {
                     "audience": "male",
-                    "value": 10
+                    "value": 8
                 },
                 {
                     "audience": "boomer",
-                    "value": 10
+                    "value": 7
                 },
                 {
                     "audience": "female",
@@ -74,7 +74,7 @@
                 },
                 {
                     "audience": "genz",
-                    "value": -12
+                    "value": -9
                 }
             ]
         },
@@ -84,19 +84,19 @@
             "result": [
                 {
                     "audience": "male",
-                    "value": 5
+                    "value": 4
                 },
                 {
                     "audience": "boomer",
-                    "value": 10
+                    "value": 7
                 },
                 {
                     "audience": "millenial",
-                    "value": -2
+                    "value": -4
                 },
                 {
                     "audience": "genz",
-                    "value": -10
+                    "value": -8
                 }
             ]
         },
@@ -106,7 +106,7 @@
             "result": [
                 {
                     "audience": "male",
-                    "value": 5
+                    "value": 4
                 },
                 {
                     "audience": "female",
@@ -114,15 +114,15 @@
                 },
                 {
                     "audience": "boomer",
-                    "value": -5
+                    "value": -12
                 },
                 {
                     "audience": "millenial",
-                    "value": 10
+                    "value": 5
                 },
                 {
                     "audience": "genz",
-                    "value": 5
+                    "value": 8
                 }
             ]
         },
@@ -132,7 +132,7 @@
             "result": [
                 {
                     "audience": "male",
-                    "value": -15
+                    "value": -12
                 },
                 {
                     "audience": "female",
@@ -140,15 +140,15 @@
                 },
                 {
                     "audience": "boomer",
-                    "value": -5
+                    "value": -12
                 },
                 {
                     "audience": "millenial",
-                    "value": 10
+                    "value": 6
                 },
                 {
                     "audience": "genz",
-                    "value": 10
+                    "value": 12
                 }
             ]
         },
@@ -158,15 +158,15 @@
             "result": [
                 {
                     "audience": "boomer",
-                    "value": -5
+                    "value": -12
                 },
                 {
                     "audience": "millenial",
-                    "value": 5
+                    "value": 3
                 },
                 {
                     "audience": "genz",
-                    "value": 20
+                    "value": 17
                 }
             ]
         },
@@ -176,7 +176,7 @@
             "result": [
                 {
                     "audience": "boomer",
-                    "value": 10
+                    "value": 2
                 },
                 {
                     "audience": "millenial",
@@ -194,25 +194,7 @@
             "result": [
                 {
                     "audience": "male",
-                    "value": -5
-                },
-                {
-                    "audience": "female",
-                    "value": 10
-                },
-                {
-                    "audience": "genz",
-                    "value": 5
-                }
-            ]
-        },
-        {
-            "title": "Parody",
-            "text": "Tell a story about your dad being unable to find the eggs in a grocery store.",
-            "result": [
-                {
-                    "audience": "male",
-                    "value": -5
+                    "value": -10
                 },
                 {
                     "audience": "female",
@@ -238,15 +220,15 @@
                 },
                 {
                     "audience": "boomer",
-                    "value": -10
+                    "value": -12
                 },
                 {
                     "audience": "millenial",
-                    "value": 10
+                    "value":6
                 },
                 {
                     "audience": "genz",
-                    "value": 5
+                    "value": 8
                 }
             ]
         },
@@ -256,7 +238,7 @@
             "result": [
                 {
                     "audience": "male",
-                    "value": 10
+                    "value": 5
                 },
                 {
                     "audience": "female",
@@ -264,15 +246,15 @@
                 },
                 {
                     "audience": "boomer",
-                    "value": 10
+                    "value": 7
                 },
                 {
                     "audience": "millenial",
-                    "value": 5
+                    "value": 4
                 },
                 {
                     "audience": "genz",
-                    "value": -10
+                    "value": -8
                 }
             ]
         },
@@ -282,23 +264,19 @@
             "result": [
                 {
                     "audience": "male",
-                    "value": 10
-                },
-                {
-                    "audience": "female",
-                    "value": 0
+                    "value": 8
                 },
                 {
                     "audience": "boomer",
-                    "value": -5
+                    "value": -7
                 },
                 {
                     "audience": "millenial",
-                    "value": 5
+                    "value": 3
                 },
                 {
                     "audience": "genz",
-                    "value": 5
+                    "value": 6
                 }
             ]
         },
@@ -307,24 +285,20 @@
             "text": "The past, the present, and the future walked into a bar. It was tense.",
             "result": [
                 {
-                    "audience": "male",
-                    "value": 0
-                },
-                {
                     "audience": "female",
                     "value": 5
                 },
                 {
                     "audience": "boomer",
-                    "value": 10
+                    "value": 7
                 },
                 {
                     "audience": "millenial",
-                    "value": 5
+                    "value": 4
                 },
                 {
                     "audience": "genz",
-                    "value": -5
+                    "value": -4
                 }
             ]
         },
@@ -334,23 +308,19 @@
             "result": [
                 {
                     "audience": "male",
-                    "value": 10
-                },
-                {
-                    "audience": "female",
-                    "value": 0
+                    "value": 6
                 },
                 {
                     "audience": "boomer",
-                    "value": 5
+                    "value": 6
                 },
                 {
                     "audience": "millenial",
-                    "value": 5
+                    "value": 4
                 },
                 {
                     "audience": "genz",
-                    "value": -5
+                    "value": -4
                 }
             ]
         },
@@ -360,23 +330,19 @@
             "result": [
                 {
                     "audience": "male",
-                    "value": 10
+                    "value": 5
                 },
                 {
                     "audience": "female",
-                    "value": 0
+                    "value": 10
                 },
                 {
                     "audience": "boomer",
-                    "value": 5
+                    "value": 4
                 },
                 {
                     "audience": "millenial",
-                    "value": 5
-                },
-                {
-                    "audience": "genz",
-                    "value": -5
+                    "value": 2
                 }
             ]
         },
@@ -386,23 +352,19 @@
             "result": [
                 {
                     "audience": "male",
-                    "value": 15
+                    "value": 7
                 },
                 {
                     "audience": "boomer",
-                    "value": 10
+                    "value": 7
                 },
                 {
                     "audience": "female",
                     "value": -8
                 },
                 {
-                    "audience": "millenial",
-                    "value": 2
-                },
-                {
                     "audience": "genz",
-                    "value": -16
+                    "value": -7
                 }
             ]
         },
@@ -412,15 +374,11 @@
             "result": [
                 {
                     "audience": "boomer",
-                    "value": 15
-                },
-                {
-                    "audience": "millenial",
-                    "value": 0
+                    "value": 10
                 },
                 {
                     "audience": "genz",
-                    "value": -15
+                    "value": -5
                 }
             ]
         },
@@ -430,11 +388,11 @@
             "result": [
                 {
                     "audience": "male",
-                    "value": 5
+                    "value": 4
                 },
                 {
                     "audience": "boomer",
-                    "value": 5
+                    "value": 4
                 },
                 {
                     "audience": "female",
@@ -442,7 +400,7 @@
                 },
                 {
                     "audience": "millenial",
-                    "value": 5
+                    "value": 4
                 },
                 {
                     "audience": "genz",
@@ -456,19 +414,15 @@
             "result": [
                 {
                     "audience": "boomer",
-                    "value": 15
+                    "value": 12
                 },
                 {
                     "audience": "female",
                     "value": 10
                 },
                 {
-                    "audience": "millenial",
-                    "value": 0
-                },
-                {
                     "audience": "genz",
-                    "value": -10
+                    "value": -5
                 }
             ]
         },
@@ -477,24 +431,56 @@
             "text": "Tell a funny story about the good old times.",
             "result": [
                 {
-                    "audience": "male",
-                    "value": 5
-                },
-                {
                     "audience": "boomer",
-                    "value": 15
-                },
-                {
-                    "audience": "female",
-                    "value": -5
+                    "value": 12
                 },
                 {
                     "audience": "millenial",
-                    "value": 5
+                    "value": 4
                 },
                 {
                     "audience": "genz",
+                    "value": -5
+                }
+            ]
+        },
+        {
+            "title": "Story",
+            "text": "Tell a funny story about a strong and independent women.",
+            "result": [
+                {
+                    "audience": "boomer",
                     "value": -10
+                },
+                {
+                    "audience": "millenial",
+                    "value": -5
+                },
+                {
+                    "audience": "genz",
+                    "value": 10
+                },
+                {
+                    "audience": "male",
+                    "value": -10
+                },
+                {
+                    "audience": "female",
+                    "value": 10
+                }
+            ]
+        },
+        {
+            "title": "Parody",
+            "text": "Make fun of Flat-Earthers.",
+            "result": [
+                {
+                    "audience": "boomer",
+                    "value": -5
+                },
+                {
+                    "audience": "genz",
+                    "value": 5
                 }
             ]
         }
